@@ -1,1616 +1,594 @@
-<html lang="es"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EducaKids Shop — La tienda de materiales educativos PDF más completa de Argentina. Cuadernillos, fichas y recursos imprimibles para docentes y familias.">
-  <meta name="keywords" content="materiales educativos, PDF imprimibles, cuadernillos, fichas, docentes, primaria, inicial">
-  <title>EducaKids Shop — Materiales Educativos PDF Premium</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
- <style>
-  /* ============================================================
-   GOOGLE FONTS — reemplaza el <link> del HTML por este:
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-============================================================ */
-
-/* ============================================================
-   DESIGN SYSTEM — Tech Moderno Profesional
-   ─────────────────────────────────────────
-   60 % Base     → #F8F9FA  fondo de página / #FFFFFF superficies
-   30 % Cuerpo   → #2D3748  texto, titulares, nav
-   10 % Acento   → #3182CE  azul cobalto: botones, links, activos
-   ─────────────────────────────────────────
-   Hero BG       → #1A202C  (azul-gris profundo, no negro puro)
-============================================================ */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EducaKids Shop — La tienda de materiales educativos PDF más completa de Argentina. Cuadernillos, fichas y recursos imprimibles para docentes y familias.">
+<title>EducaKids Shop — Materiales Educativos PDF Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
 :root {
-  /* ── Paleta base ── */
-  --bg:               #F8F9FA;
-  --surface:          #FFFFFF;
-  --text:             #2D3748;
-  --text-muted:       #718096;
-  --text-faint:       #A0AEC0;
-  --hero-bg:          #1A202C;
+  --bg: #f3f3f3;
+  --surface: #ffffff;
+  --text: #000000;
+  --text-muted: #6b6b6b;
+  --text-faint: #999999;
+  --accent: #1f74b2;
+  --accent-dark: #185b8b;
+  --accent-deeper: #2c5282;
+  --accent-subtle: #ebf8ff;
+  --border: #d6d6d6;
+  --border-light: #ededed;
+  --hero-bg: #000000;
+  --green: #03c900;
+  --amber: #e3a005;
+  --red: #ff4800;
+  --gray-dark: #2a2a2a;
+  --fafafa: #fafafa;
 
-  /* ── Acento único: Azul Cobalto ── */
-  --accent:           #3182CE;
-  --accent-dark:      #2B6CB0;
-  --accent-deeper:    #2C5282;
-  --accent-subtle:    #EBF8FF;
-  --accent-border:    rgba(49, 130, 206, 0.25);
-
-  /* ── Bordes y divisores ── */
-  --border:           #E2E8F0;
-  --border-light:     #EDF2F7;
-
-  /* ── Semáforos funcionales (sin uso como acento principal) ── */
-  --green:            #38A169;
-  --green-light:      rgba(56, 161, 105, 0.10);
-  --amber:            #D69E2E;
-  --amber-light:      rgba(214, 158, 46, 0.12);
-  --red:              #E53E3E;
-
-  /* ── Sombras calibradas ── */
-  --shadow-card:      0 4px 6px -1px rgba(0, 0, 0, 0.05),
-                      0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-sm:        0 1px 3px rgba(0, 0, 0, 0.06),
-                      0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md:        0 4px 6px -1px rgba(0, 0, 0, 0.07),
-                      0 2px 4px -1px rgba(0, 0, 0, 0.05);
-  --shadow-lg:        0 10px 15px -3px rgba(0, 0, 0, 0.07),
-                      0 4px 6px -2px rgba(0, 0, 0, 0.04);
-  --shadow-accent:    0 4px 14px rgba(49, 130, 206, 0.22);
-  --shadow-2xl:       0 25px 50px rgba(0, 0, 0, 0.12);
-
-  /* ── Bordes redondeados ── */
-  --r-sm:   6px;
-  --r-md:   8px;   /* botones */
-  --r-lg:   10px;
-  --r-xl:   12px;  /* tarjetas */
-  --r-2xl:  16px;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+  --r-xl: 10px;
+  --r-2xl: 14px;
   --r-pill: 9999px;
 
-  /* ── Tipografía ── */
-  --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Google Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 
-  /* ── Transición única (solo hover) ── */
-  --t: all 0.25s ease;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-card: 0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.07), 0 4px 6px -2px rgba(0,0,0,.04);
+  --shadow-accent: 0 4px 14px rgba(31,116,178,.22);
 
-  /* ── Layout ── */
-  --header-h: 68px;
-  --max-w:    1400px;
+  --header-h: 72px;
+  --max-w: 1440px;
+  --t: all .25s cubic-bezier(.44,0,.56,1);
 }
 
-/* ============================================================
-   RESET
-============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-a     { text-decoration: none; color: inherit; }
-img   { display: block; max-width: 100%; }
-button{ cursor: pointer; font-family: inherit; border: none; outline: none; background: none; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; border: none; outline: none; background: none; }
 input { font-family: inherit; }
-ul    { list-style: none; }
-svg   { vertical-align: middle; }
+ul { list-style: none; }
 
-/* ============================================================
-   HEADER
-============================================================ */
+/* ── NAVBAR ── */
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 500;
+  position: sticky; top: 0; z-index: 500;
   height: var(--header-h);
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(14px) saturate(150%);
-  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
   border-bottom: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
 }
-
 .header-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 32px;
+  max-width: var(--max-w); margin: 0 auto;
+  height: 100%; display: flex; align-items: center;
+  gap: 20px; padding: 0 40px;
 }
-
-/* ── Logo ── */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  user-select: none;
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0; user-select: none;
 }
-
-.logo-icon-wrap {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--r-md);
+.logo-icon {
+  width: 36px; height: 36px; border-radius: var(--r-lg);
   background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
 }
+.logo-icon img { width: 80%; }
+.logo-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: -.02em; }
+.logo-tag { font-size: .62rem; font-weight: 600; color: var(--text-faint); letter-spacing: .07em; text-transform: uppercase; margin-top: 1px; }
 
-.logo-wordmark { line-height: 1; }
-
-.logo-name {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.logo-tagline {
-  font-size: 0.62rem;
-  font-weight: 600;
-  color: var(--text-faint);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-
-/* ── Búsqueda ── */
-.search-wrapper {
-  flex: 1;
-  max-width: 500px;
-  position: relative;
-}
-
+.search-wrap { flex: 1; max-width: 480px; }
 .search-bar {
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: var(--r-pill);
-  overflow: hidden;
-  transition: var(--t);
+  display: flex; align-items: center;
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: var(--r-pill); overflow: hidden; transition: var(--t);
 }
-
-.search-bar:focus-within {
-  background: var(--surface);
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.12);
-}
-
-.search-icon {
-  padding: 0 10px 0 14px;
-  color: var(--text-faint);
-  flex-shrink: 0;
-  display: flex;
-}
-
+.search-bar:focus-within { background: var(--surface); border-color: var(--accent); box-shadow: 0 0 0 3px rgba(31,116,178,.12); }
+.search-icon { padding: 0 10px 0 14px; color: var(--text-faint); flex-shrink: 0; display: flex; }
+.search-icon svg { width: 16px; height: 16px; }
 .search-bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 10px 0;
-  font-size: 0.88rem;
-  color: var(--text);
+  flex: 1; border: none; outline: none; background: transparent;
+  padding: 10px 0; font-size: .88rem; color: var(--text);
 }
-
 .search-bar input::placeholder { color: var(--text-faint); }
-
 .search-submit {
-  background: var(--accent);
-  color: white;
-  padding: 7px 16px;
-  margin: 4px;
-  border-radius: var(--r-pill);
-  font-size: 0.80rem;
-  font-weight: 700;
-  white-space: nowrap;
-  transition: var(--t);
+  background: var(--accent); color: white;
+  padding: 7px 16px; margin: 4px; border-radius: var(--r-pill);
+  font-size: .80rem; font-weight: 700; white-space: nowrap; transition: var(--t);
 }
+.search-submit:hover { background: var(--accent-dark); }
 
-.search-submit:hover {
-  background: var(--accent-dark);
-}
-
-/* ── Nav links ── */
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-  margin-left: auto;
-}
-
+.nav-links { display: flex; align-items: center; gap: 4px; flex-shrink: 0; margin-left: auto; }
 .nav-link {
-  padding: 7px 13px;
-  border-radius: var(--r-pill);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  transition: var(--t);
+  padding: 7px 14px; border-radius: var(--r-pill);
+  font-size: .85rem; font-weight: 600; color: var(--text-muted); transition: var(--t);
   white-space: nowrap;
 }
+.nav-link:hover { background: var(--bg); color: var(--accent); }
+.nav-link-cta { background: var(--accent); color: white !important; font-weight: 700; }
+.nav-link-cta:hover { background: var(--accent-dark) !important; transform: translateY(-1px); }
 
-.nav-link:hover {
-  background: var(--bg);
-  color: var(--accent);
-}
-
-.nav-link-cta {
-  background: var(--accent);
-  color: white !important;
-  font-weight: 700;
-  padding: 7px 16px;
-}
-
-.nav-link-cta:hover {
-  background: var(--accent-dark) !important;
-  transform: translateY(-1px);
-}
-
-/* ── Hamburger ── */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-  border-radius: var(--r-md);
-  transition: var(--t);
-}
-
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; border-radius: var(--r-md); }
 .hamburger:hover { background: var(--bg); }
+.hamburger span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
 
-.hamburger span {
-  width: 20px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: var(--t);
-}
-
-/* ============================================================
-   CATEGORY NAV BAR
-============================================================ */
-.cat-bar {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border-light);
-}
-
+/* ── CAT BAR ── */
+.cat-bar { background: var(--surface); border-bottom: 1px solid var(--border-light); }
 .cat-bar-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 10px 32px;
-  overflow-x: auto;
-  gap: 8px;
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; align-items: center;
+  padding: 10px 40px; overflow-x: auto; gap: 8px;
 }
-
 .cat-bar-inner::-webkit-scrollbar { height: 0; }
-
 .cat-tab {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  display: flex; align-items: center; gap: 7px;
   padding: 8px 15px;
-  font-size: 0.83rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  white-space: nowrap;
-  border-radius: var(--r-md);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  cursor: pointer;
-  transition: var(--t);
+  font-size: .83rem; font-weight: 600; color: var(--text-muted);
+  white-space: nowrap; border-radius: var(--r-md);
+  border: 1px solid var(--border); background: var(--surface);
+  cursor: pointer; transition: var(--t);
 }
+.cat-tab:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-subtle); }
+.cat-tab.active { background: var(--accent); color: white; border-color: transparent; font-weight: 700; box-shadow: var(--shadow-accent); }
+.cat-tab img { width: 16px; height: 16px; object-fit: contain; }
 
-.cat-tab:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-subtle);
-}
-
-.cat-tab.active {
-  background: var(--accent);
-  color: white;
-  border-color: transparent;
-  font-weight: 700;
-  box-shadow: var(--shadow-accent);
-}
-
-.cat-tab.active .cat-dot { background: rgba(255, 255, 255, 0.6) !important; }
-
-.cat-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* ============================================================
-   HERO SECTION — Azul oscuro profundo #1A202C
-============================================================ */
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: var(--hero-bg);
-  min-height: 460px;
-}
-
-/* Degradado tenue de acento, sin animación automática */
+/* ── HERO ── */
+.hero { position: relative; overflow: hidden; background: var(--hero-bg); min-height: 500px; }
 .hero-mesh {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(ellipse 50% 65% at 15% 50%, rgba(49, 130, 206, 0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 55% at 85% 20%, rgba(49, 130, 206, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 30% 45% at 65% 80%, rgba(49, 130, 206, 0.08) 0%, transparent 55%);
+    radial-gradient(ellipse 55% 65% at 12% 50%, rgba(31,116,178,.22) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 55% at 88% 18%, rgba(31,116,178,.12) 0%, transparent 60%);
 }
-
-/* Formas decorativas estáticas */
+.hero-shapes { position: absolute; inset: 0; z-index: 1; }
 .hero-shape {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,.015); border: 1px solid rgba(255,255,255,.04);
 }
-
-.hero-shape-1 { width: 320px; height: 320px; top: -110px; right: 4%; }
-.hero-shape-2 { width: 190px; height: 190px; bottom: -65px; right: 18%; }
-.hero-shape-3 { width: 110px; height: 110px; top: 32%; left: 44%; }
-
-/* Grano de ruido muy sutil */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-  background-size: 200px;
-  pointer-events: none;
-}
+.hs1 { width: 340px; height: 340px; top: -120px; right: 3%; }
+.hs2 { width: 200px; height: 200px; bottom: -70px; right: 16%; }
+.hs3 { width: 120px; height: 120px; top: 33%; left: 46%; }
 
 .hero-inner {
-  position: relative;
-  z-index: 10;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 80px 32px 96px;
-  display: flex;
-  align-items: center;
-  gap: 48px;
+  position: relative; z-index: 10;
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 90px 40px 100px;
+  display: flex; align-items: center; gap: 56px;
 }
-
 .hero-content { flex: 1; color: white; }
-
 .hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(49, 130, 206, 0.15);
-  border: 1px solid rgba(49, 130, 206, 0.30);
-  backdrop-filter: blur(8px);
-  border-radius: var(--r-pill);
-  padding: 5px 14px;
-  margin-bottom: 22px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(31,116,178,.15); border: 1px solid rgba(31,116,178,.32);
+  border-radius: var(--r-pill); padding: 5px 14px; margin-bottom: 22px;
+  font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.85);
+  letter-spacing: .09em; text-transform: uppercase;
 }
-
-.hero-eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #68D391; /* verde suave, solo como indicador de estado "live" */
-}
-
+.eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #68d391; }
 .hero-title {
-  font-size: clamp(1.85rem, 4vw, 2.9rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 18px;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+  font-weight: 700; line-height: 1.1; margin-bottom: 18px; letter-spacing: -.05em;
 }
-
-.hero-title .word-1 { color: white; }
-.hero-title .word-2 { color: var(--accent); }
-.hero-title .word-3 { color: #F6AD55; } /* ámbar suave sobre fondo oscuro */
-
-.hero-subtitle {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.60);
-  line-height: 1.7;
-  max-width: 450px;
-  margin-bottom: 32px;
+.hero-title .w1 { color: white; text-transform: capitalize; }
+.hero-title .w2 { color: var(--accent); text-transform: capitalize; }
+.hero-title .w3 { color: #f6ad55; text-transform: capitalize; }
+.hero-sub { font-size: 1rem; color: rgba(255,255,255,.58); line-height: 1.7; max-width: 460px; margin-bottom: 32px; }
+.hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: white; border-radius: var(--r-lg);
+  padding: 13px 26px; font-size: .95rem; font-weight: 700;
+  box-shadow: var(--shadow-accent); transition: var(--t);
 }
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(31,116,178,.38); }
+.btn-primary:active { transform: translateY(0); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16);
+  color: white; border-radius: var(--r-lg); padding: 12px 22px;
+  font-size: .92rem; font-weight: 600; transition: var(--t);
 }
+.btn-secondary:hover { background: rgba(255,255,255,.13); }
+.hero-trust { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.trust-item-inline { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: rgba(255,255,255,.46); }
+.trust-item-inline svg { width: 13px; height: 13px; color: #68d391; }
 
-/* ── Botón hero primario ── */
-.btn-hero-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--accent);
-  color: white;
-  border-radius: var(--r-md);
-  padding: 13px 26px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-accent);
-  transition: var(--t);
-}
-
-.btn-hero-primary:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(49, 130, 206, 0.38);
-}
-
-.btn-hero-primary:active { transform: translateY(0); }
-
-/* ── Botón hero secundario ── */
-.btn-hero-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: white;
-  border-radius: var(--r-md);
-  padding: 12px 22px;
-  font-size: 0.92rem;
-  font-weight: 600;
-  transition: var(--t);
-}
-
-.btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.13); }
-
-.hero-trust {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.hero-trust-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.48);
-}
-
-.hero-trust-item svg { color: #68D391; }
-
-/* ── Cards de estadísticas del hero ── */
-.hero-right {
-  flex-shrink: 0;
-  width: 290px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
+/* stats right */
+.hero-right { flex-shrink: 0; width: 300px; display: flex; flex-direction: column; gap: 12px; }
 .stat-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  backdrop-filter: blur(16px);
-  border-radius: var(--r-xl);
-  padding: 18px 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: var(--t);
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.09);
+  backdrop-filter: blur(16px); border-radius: var(--r-xl);
+  padding: 18px 22px; display: flex; align-items: center; gap: 14px; transition: var(--t);
 }
+.stat-card:hover { background: rgba(255,255,255,.10); transform: translateX(4px); }
+.stat-icon { width: 44px; height: 44px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.stat-icon img { width: 70%; }
+.si-blue { background: rgba(31,116,178,.12); }
+.si-green { background: rgba(3,201,0,.10); }
+.si-amber { background: rgba(227,160,5,.10); }
+.stat-val { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; line-height: 1; letter-spacing: -.03em; color: white; }
+.stat-lbl { font-size: .74rem; color: rgba(255,255,255,.44); margin-top: 3px; }
 
-.stat-card:hover {
-  background: rgba(255, 255, 255, 0.10);
-  transform: translateX(3px);
-}
+/* wave */
+.hero-wave { display: block; width: 100%; margin-top: -2px; }
 
-.stat-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  flex-shrink: 0;
-}
-
-/* Fondos de ícono de stats — todos a 10% de opacidad */
-.stat-icon.purple { background: rgba(49, 130, 206, 0.12); }
-.stat-icon.green  { background: rgba(56, 161, 105, 0.12); }
-.stat-icon.amber  { background: rgba(214, 158, 46, 0.12); }
-
-.stat-body { color: white; }
-.stat-val  { font-size: 1.4rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
-.stat-label{ font-size: 0.74rem; color: rgba(255, 255, 255, 0.45); margin-top: 3px; }
-
-/* ============================================================
-   WAVE DIVIDER
-============================================================ */
-.hero-wave {
-  display: block;
-  width: 100%;
-  margin-top: -2px;
-  color: var(--bg);
-}
-
-/* ============================================================
-   TRUST BAR
-============================================================ */
+/* ── TRUST BAR ── */
 .trust-bar {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-xl);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -32px;
-  position: relative;
-  z-index: 20;
-  max-width: calc(var(--max-w) - 64px);
-  box-shadow: var(--shadow-card);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-xl); margin: -32px auto 0;
+  position: relative; z-index: 20;
+  max-width: calc(var(--max-w) - 80px); box-shadow: var(--shadow-card);
 }
-
-.trust-bar-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
+.trust-bar-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
 .trust-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 24px 28px;
-  border-right: 1px solid var(--border-light);
+  display: flex; align-items: center; gap: 14px;
+  padding: 22px 26px; border-right: 1px solid var(--border-light);
 }
-
 .trust-item:last-child { border-right: none; }
+.ti-icon { width: 40px; height: 40px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.ti-icon img { width: 70%; }
+.ti-blue { background: rgba(31,116,178,.08); }
+.ti-green { background: rgba(3,201,0,.08); }
+.ti-amber { background: rgba(227,160,5,.08); }
+.ti-lbl { font-size: .87rem; font-weight: 700; color: var(--text); }
+.ti-sub { font-size: .74rem; color: var(--text-faint); margin-top: 2px; }
 
-.trust-item-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
+/* ── PAGE BODY ── */
+.page { max-width: var(--max-w); margin: 0 auto; padding: 80px 40px 96px; }
 
-/* Fondos de ícono trust — 10% de opacidad */
-.ti-purple { background: rgba(49, 130, 206, 0.08); }
-.ti-green  { background: rgba(56, 161, 105, 0.08); }
-.ti-amber  { background: rgba(214, 158, 46, 0.08); }
-.ti-blue   { background: rgba(49, 130, 206, 0.08); }
-
-.trust-item-label { font-size: 0.87rem; font-weight: 700; color: var(--text); }
-.trust-item-sub   { font-size: 0.74rem; color: var(--text-faint); margin-top: 2px; }
-
-/* ============================================================
-   PAGE BODY — padding mínimo 80px
-============================================================ */
-.page-body {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 80px 32px 96px;
-}
-
-/* ============================================================
-   SECTION HEADERS
-============================================================ */
-.section-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 28px;
-  gap: 16px;
-}
-
+/* ── SECTION HEAD ── */
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px; gap: 16px; }
 .section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  color: var(--accent);
-  margin-bottom: 5px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .11em; color: var(--accent); margin-bottom: 5px;
 }
-
-.section-title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-
+.section-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -.03em; }
 .section-link {
-  font-size: 0.83rem;
-  font-weight: 600;
-  color: var(--accent);
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  transition: var(--t);
+  font-size: .83rem; font-weight: 600; color: var(--accent); white-space: nowrap;
+  display: flex; align-items: center; gap: 4px; transition: var(--t);
 }
-
 .section-link:hover { gap: 8px; }
+.section-link svg { width: 14px; height: 14px; }
 
-/* ============================================================
-   CATEGORY CARDS
-   Fondos sólidos suaves (reemplazan gradientes agresivos)
-============================================================ */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  margin-bottom: 80px;
-}
-
+/* ── CAT CARDS ── */
+.cat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 80px; }
 .cat-card {
-  border-radius: var(--r-xl);
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  aspect-ratio: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 16px 12px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  transition: var(--t);
+  border-radius: var(--r-xl); overflow: hidden;
+  position: relative; cursor: pointer; aspect-ratio: 1;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: flex-end; padding: 16px 12px;
+  border: 1px solid var(--border); box-shadow: var(--shadow-card); transition: var(--t);
 }
-
-.cat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.cat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.cat-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.62) 0%, rgba(0,0,0,.04) 60%, transparent 100%);
 }
+.cat-icon { position: relative; z-index: 2; font-size: 1.9rem; margin-bottom: 6px; }
+.cat-name { position: relative; z-index: 2; font-size: .78rem; font-weight: 700; color: white; text-align: center; line-height: 1.2; }
+.cat-count { position: relative; z-index: 2; font-size: .66rem; color: rgba(255,255,255,.58); margin-top: 2px; }
+.cc-mat { background: #1e3a5f; }
+.cc-len { background: #553c7b; }
+.cc-cie { background: #1a4d6b; }
+.cc-soc { background: #1a4a42; }
+.cc-art { background: #6b2d5a; }
+.cc-ini { background: #7b4f12; }
 
-.cat-card-bg {
-  position: absolute;
-  inset: 0;
-  transition: var(--t);
+/* ── FEATURED BANNER ── */
+.featured {
+  border-radius: var(--r-2xl); overflow: hidden;
+  background: var(--hero-bg); border: 1px solid rgba(255,255,255,.06);
+  position: relative; margin-bottom: 80px;
+  min-height: 200px; display: flex; align-items: center;
 }
-
-.cat-card:hover .cat-card-bg { transform: scale(1.04); }
-
-.cat-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26, 32, 44, 0.60) 0%, rgba(26, 32, 44, 0.05) 60%, transparent 100%);
-}
-
-.cat-card-icon {
-  position: relative;
-  z-index: 2;
-  font-size: 1.9rem;
-  margin-bottom: 6px;
-}
-
-.cat-card-name {
-  position: relative;
-  z-index: 2;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: white;
-  text-align: center;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-.cat-card-count {
-  position: relative;
-  z-index: 2;
-  font-size: 0.66rem;
-  color: rgba(255, 255, 255, 0.60);
-  margin-top: 2px;
-}
-
-/*
-  Fondos de categoría:
-  Sustituidos por tonos sólidos profundos, coherentes con #1A202C.
-  Sin degradados múltiples ni colores chillones.
-*/
-.cat-mat { background: #1E3A5F; } /* Azul noche */
-.cat-len { background: #553C7B; } /* Violeta oscuro */
-.cat-cie { background: #1A4D6B; } /* Azul océano */
-.cat-soc { background: #1A4A42; } /* Verde teal oscuro */
-.cat-art { background: #6B2D5A; } /* Burdeos */
-.cat-ini { background: #7B4F12; } /* Caramelo oscuro */
-
-/* ============================================================
-   FEATURED BANNER
-============================================================ */
-.featured-banner {
-  border-radius: var(--r-2xl);
-  overflow: hidden;
-  background: var(--hero-bg);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  position: relative;
-  margin-bottom: 80px;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-}
-
-.featured-banner-bg {
-  position: absolute;
-  inset: 0;
+.featured-bg {
+  position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 50% 70% at 80% 50%, rgba(49, 130, 206, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 55% at 15% 40%, rgba(49, 130, 206, 0.08) 0%, transparent 55%);
+    radial-gradient(ellipse 50% 70% at 80% 50%, rgba(31,116,178,.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 55% at 15% 40%, rgba(31,116,178,.08) 0%, transparent 55%);
 }
-
-.featured-content {
-  position: relative;
-  z-index: 2;
-  padding: 40px 48px;
-  color: white;
-  flex: 1;
-}
-
+.featured-content { position: relative; z-index: 2; padding: 40px 48px; color: white; flex: 1; }
 .featured-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(214, 158, 46, 0.15);
-  border: 1px solid rgba(214, 158, 46, 0.30);
-  color: #F6AD55;
-  border-radius: var(--r-md);
-  padding: 4px 12px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(227,160,5,.15); border: 1px solid rgba(227,160,5,.30);
+  color: #f6ad55; border-radius: var(--r-md); padding: 4px 12px;
+  font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px;
 }
-
-.featured-title {
-  font-size: 1.55rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-}
-
-.featured-sub {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 26px;
-  max-width: 400px;
-  line-height: 1.6;
-}
-
+.featured-title { font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; letter-spacing: -.03em; margin-bottom: 8px; }
+.featured-sub { font-size: .88rem; color: rgba(255,255,255,.52); margin-bottom: 26px; max-width: 400px; line-height: 1.6; }
 .btn-featured {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--accent);
-  color: white;
-  border-radius: var(--r-md);
-  padding: 11px 22px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-accent);
-  transition: var(--t);
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: white; border-radius: var(--r-lg);
+  padding: 11px 22px; font-size: .88rem; font-weight: 700;
+  box-shadow: var(--shadow-accent); transition: var(--t);
 }
-
-.btn-featured:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(49, 130, 206, 0.35);
-}
-
+.btn-featured:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn-featured svg { width: 14px; height: 14px; }
 .featured-right {
-  position: relative;
-  z-index: 2;
-  padding: 24px 48px 24px 0;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  position: relative; z-index: 2;
+  padding: 24px 48px 24px 0; display: flex; align-items: center; gap: 16px;
 }
-
-.featured-stat-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  border-radius: var(--r-lg);
-  padding: 16px 20px;
-  text-align: center;
-  color: white;
+.fsc {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(8px); border-radius: var(--r-lg);
+  padding: 16px 20px; text-align: center; color: white;
 }
+.fsc-val { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; letter-spacing: -.03em; }
+.fsc-lbl { font-size: .68rem; color: rgba(255,255,255,.44); margin-top: 2px; }
 
-.fsc-val { font-size: 1.45rem; font-weight: 800; letter-spacing: -0.02em; }
-.fsc-lbl { font-size: 0.68rem; color: rgba(255, 255, 255, 0.45); margin-top: 2px; }
-
-/* ============================================================
-   FILTER STRIP
-============================================================ */
-.filter-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
+/* ── FILTER ROW ── */
+.filter-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
 .filter-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-
 .filter-pill {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 7px 14px;
-  border-radius: var(--r-md);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--t);
+  display: flex; align-items: center; gap: 5px;
+  padding: 7px 14px; border-radius: var(--r-lg);
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-muted); font-size: .82rem; font-weight: 600; cursor: pointer; transition: var(--t);
 }
-
-.filter-pill:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-subtle);
-}
-
-.filter-pill.active {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-  box-shadow: var(--shadow-accent);
-}
-
-.filter-pill .pip { width: 6px; height: 6px; border-radius: 50%; }
-.filter-pill.active .pip { background: rgba(255, 255, 255, 0.6); }
-
-.results-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.83rem;
-  color: var(--text-muted);
-}
-
+.filter-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-subtle); }
+.filter-pill.active { background: var(--accent); color: white; border-color: var(--accent); box-shadow: var(--shadow-accent); }
+.results-meta { font-size: .83rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
 .results-count { font-weight: 700; color: var(--text); }
 
-/* ============================================================
-   PRODUCT GRID
-============================================================ */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
-  gap: 16px;
-}
+/* ── PRODUCT GRID ── */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
 
-/* ============================================================
-   PRODUCT CARD
-============================================================ */
+/* ── PRODUCT CARD ── */
 .product-card {
-  background: var(--surface);
-  border-radius: var(--r-xl);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  cursor: pointer;
-  transition: var(--t);
+  background: var(--surface); border-radius: var(--r-xl);
+  overflow: hidden; border: 1px solid var(--border);
+  box-shadow: var(--shadow-card); display: flex; flex-direction: column;
+  position: relative; cursor: pointer; transition: var(--t);
 }
-
-.product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(49, 130, 206, 0.18);
-}
-
-/* ── Badges ── */
-.card-badges {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
+.product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: rgba(31,116,178,.18); }
+.card-badges { position: absolute; top: 10px; left: 10px; z-index: 5; display: flex; flex-direction: column; gap: 4px; }
 .chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 8px;
-  border-radius: var(--r-sm);
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: white;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; border-radius: var(--r-sm);
+  font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: white;
 }
-
-.chip-nuevo  { background: var(--accent); }
-.chip-gratis { background: var(--green); }
-.chip-hot    { background: var(--red); }
-.chip-sale   { background: var(--amber); }
-
-/* ── Wishlist ── */
+.chip-new { background: var(--accent); }
+.chip-free { background: var(--green); }
+.chip-hot { background: var(--red); }
 .card-wish {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 5;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.90);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-sm);
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: var(--t);
-  font-size: 0.88rem;
+  position: absolute; top: 10px; right: 10px; z-index: 5;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(255,255,255,.92); display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm); opacity: 0; transform: translateY(-4px); transition: var(--t);
+  font-size: .88rem;
 }
-
 .product-card:hover .card-wish { opacity: 1; transform: translateY(0); }
-.card-wish:hover { background: white; }
-
-/* ── Imagen ── */
-.card-img-wrap {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: var(--bg);
-  position: relative;
-}
-
-.card-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease;
-}
-
-.product-card:hover .card-img-wrap img { transform: scale(1.04); }
-
+.card-img { aspect-ratio: 16/10; overflow: hidden; background: var(--bg); position: relative; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.product-card:hover .card-img img { transform: scale(1.04); }
 .card-img-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(to top, rgba(26, 32, 44, 0.40), transparent);
-  opacity: 0;
-  transition: var(--t);
+  position: absolute; bottom: 0; left: 0; right: 0; height: 45%;
+  background: linear-gradient(to top, rgba(0,0,0,.38), transparent);
+  opacity: 0; transition: var(--t);
 }
-
 .product-card:hover .card-img-overlay { opacity: 1; }
-
-.card-pdf-label {
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-  background: rgba(26, 32, 44, 0.70);
-  color: white;
-  border-radius: var(--r-sm);
-  padding: 2px 8px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: var(--t);
+.card-pdf-tag {
+  position: absolute; bottom: 8px; right: 10px;
+  background: rgba(0,0,0,.68); color: white; border-radius: var(--r-sm);
+  padding: 2px 8px; font-size: .65rem; font-weight: 700; letter-spacing: .04em;
+  opacity: 0; transform: translateY(4px); transition: var(--t);
 }
-
-.product-card:hover .card-pdf-label { opacity: 1; transform: translateY(0); }
-
-/* ── Card body ── */
-.card-body {
-  padding: 16px 16px 10px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
+.product-card:hover .card-pdf-tag { opacity: 1; transform: translateY(0); }
+.card-body { padding: 16px 16px 10px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
 .card-title {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.35;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  letter-spacing: -0.01em;
+  font-size: .92rem; font-weight: 700; color: var(--text);
+  line-height: 1.35; letter-spacing: -.01em;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-
 .card-rating { display: flex; align-items: center; gap: 6px; }
-.stars-wrap  { display: flex; gap: 1px; }
-
-.star { width: 12px; height: 12px; color: #D69E2E; }
+.stars { display: flex; gap: 1px; }
+.star { width: 12px; height: 12px; color: var(--amber); }
 .star.empty { color: var(--border); }
-
-.rating-val { font-size: 0.76rem; font-weight: 700; color: var(--text-muted); }
-.rating-ct  { font-size: 0.73rem; color: var(--text-faint); }
-
+.rating-val { font-size: .76rem; font-weight: 700; color: var(--text-muted); }
+.rating-ct { font-size: .73rem; color: var(--text-faint); }
 .card-chips { display: flex; flex-wrap: wrap; gap: 4px; }
-
-.card-chip {
-  font-size: 0.69rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: var(--bg);
-  border-radius: var(--r-sm);
-  padding: 2px 7px;
-}
-
-/* ── Precio ── */
-.card-price-block { margin-top: auto; }
-
+.card-chip { font-size: .69rem; font-weight: 600; color: var(--text-muted); background: var(--bg); border-radius: var(--r-sm); padding: 2px 7px; }
+.price-block { margin-top: auto; }
 .price-main { display: flex; align-items: baseline; gap: 3px; }
-
-.price-sym {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.price-int {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1;
-  letter-spacing: -0.03em;
-}
-
-.price-dec {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.price-free-tag {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--green);
-  letter-spacing: -0.02em;
-}
-
-.price-installment {
-  font-size: 0.73rem;
-  color: var(--green);
-  font-weight: 600;
-  margin-top: 2px;
-}
-
-.price-download-tag {
-  font-size: 0.72rem;
-  color: var(--accent);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  margin-top: 3px;
-}
-
-/* ── Card CTA ── */
+.price-sym { font-size: .82rem; font-weight: 500; color: var(--text-muted); align-self: flex-start; margin-top: 4px; }
+.price-int { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; color: var(--text); line-height: 1; letter-spacing: -.04em; }
+.price-dec { font-size: .78rem; font-weight: 500; color: var(--text-muted); align-self: flex-start; margin-top: 4px; }
+.price-free { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--green); letter-spacing: -.03em; }
+.price-install { font-size: .73rem; color: var(--green); font-weight: 600; margin-top: 2px; }
+.price-dl { font-size: .72rem; color: var(--accent); font-weight: 600; display: flex; align-items: center; gap: 3px; margin-top: 3px; }
+.price-dl svg { width: 11px; height: 11px; }
 .card-cta { padding: 10px 14px 14px; }
-
-.btn-card-primary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  width: 100%;
-  padding: 10px;
-  background: var(--accent);
-  color: white;
-  border-radius: var(--r-md);
-  font-size: 0.86rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-accent);
-  transition: var(--t);
-  text-decoration: none;
+.btn-card {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  width: 100%; padding: 10px; background: var(--accent); color: white;
+  border-radius: var(--r-lg); font-size: .86rem; font-weight: 700;
+  box-shadow: var(--shadow-accent); transition: var(--t); text-decoration: none;
 }
+.btn-card:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(31,116,178,.30); }
+.btn-card:active { transform: translateY(0); }
+.btn-card svg { width: 13px; height: 13px; }
+.btn-card-free { background: var(--green); box-shadow: 0 4px 10px rgba(3,201,0,.22); }
+.btn-card-free:hover { background: #029900; box-shadow: 0 6px 16px rgba(3,201,0,.30); }
 
-.btn-card-primary:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(49, 130, 206, 0.30);
-}
-
-.btn-card-primary:active { transform: translateY(0); }
-
-/* Variante para productos gratuitos */
-.btn-card-free {
-  background: var(--green);
-  box-shadow: 0 4px 10px rgba(56, 161, 105, 0.22);
-}
-
-.btn-card-free:hover {
-  background: #2F855A;
-  box-shadow: 0 6px 16px rgba(56, 161, 105, 0.30);
-}
-
-/* ============================================================
-   EMPTY STATE
-============================================================ */
-.empty-state {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 96px 20px;
-}
-
-.empty-icon {
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 20px;
-  background: var(--accent-subtle);
-  border-radius: var(--r-2xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.9rem;
-}
-
+/* ── EMPTY STATE ── */
+.empty-state { grid-column: 1/-1; text-align: center; padding: 80px 20px; }
+.empty-icon { width: 76px; height: 76px; margin: 0 auto 20px; background: var(--accent-subtle); border-radius: var(--r-2xl); display: flex; align-items: center; justify-content: center; font-size: 1.9rem; }
 .empty-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-.empty-sub   { font-size: 0.88rem; color: var(--text-faint); line-height: 1.6; }
+.empty-sub { font-size: .88rem; color: var(--text-faint); line-height: 1.6; }
 
-/* ============================================================
-   WHY US SECTION
-============================================================ */
-.why-section { margin-top: 80px; margin-bottom: 80px; }
+/* ── WHY US ── */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
+.why-card { background: var(--surface); border-radius: var(--r-xl); padding: 32px; border: 1px solid var(--border); box-shadow: var(--shadow-card); transition: var(--t); }
+.why-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.why-icon { width: 48px; height: 48px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; overflow: hidden; }
+.why-icon img { width: 65%; }
+.wi-blue { background: rgba(31,116,178,.09); }
+.wi-green { background: rgba(3,201,0,.09); }
+.wi-amber { background: rgba(227,160,5,.09); }
+.why-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; letter-spacing: -.01em; }
+.why-desc { font-size: .86rem; color: var(--text-muted); line-height: 1.65; }
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+/* ── NEWSLETTER ── */
+.newsletter {
+  background: linear-gradient(130deg, var(--hero-bg) 0%, var(--accent-deeper) 50%, #1a365d 100%);
+  border-radius: var(--r-2xl); padding: 64px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; position: relative; overflow: hidden; margin-bottom: 80px;
 }
-
-.why-card {
-  background: var(--surface);
-  border-radius: var(--r-xl);
-  padding: 32px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  transition: var(--t);
-}
-
-.why-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-}
-
-.why-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 18px;
-}
-
-/* 10% de opacidad en fondos de ícono */
-.wi-purple { background: rgba(49, 130, 206, 0.09); }
-.wi-green  { background: rgba(56, 161, 105, 0.09); }
-.wi-amber  { background: rgba(214, 158, 46, 0.09); }
-
-.why-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; letter-spacing: -0.01em; }
-.why-desc  { font-size: 0.86rem; color: var(--text-muted); line-height: 1.65; }
-
-/* ============================================================
-   POPULAR SUBJECTS ROW
-============================================================ */
-.subjects-scroll {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  margin-bottom: 80px;
-}
-
-.subjects-scroll::-webkit-scrollbar { height: 4px; }
-.subjects-scroll::-webkit-scrollbar-track { background: var(--bg); border-radius: 2px; }
-.subjects-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-.subject-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 8px 14px 8px 10px;
-  white-space: nowrap;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: var(--t);
-}
-
-.subject-pill:hover {
-  border-color: var(--accent);
-  background: var(--accent-subtle);
-}
-
-.subject-pill.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: white;
-  box-shadow: var(--shadow-accent);
-}
-
-.subject-pill-icon {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-}
-
-.subject-pill.active .subject-pill-icon { background: rgba(255, 255, 255, 0.15); }
-
-.subject-pill-name { font-size: 0.82rem; font-weight: 600; }
-
-/* ============================================================
-   NEWSLETTER BAND — Azul profundo, sin verde neón
-============================================================ */
-.newsletter-band {
-  background: linear-gradient(130deg, var(--hero-bg) 0%, var(--accent-deeper) 50%, #1A365D 100%);
-  border-radius: var(--r-2xl);
-  padding: 64px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 80px;
-}
-
-.newsletter-band::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 50% 80% at 105% 50%, rgba(49, 130, 206, 0.12), transparent 60%);
+.newsletter::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 105% 50%, rgba(31,116,178,.12), transparent 60%);
   pointer-events: none;
 }
-
-.newsletter-text { position: relative; z-index: 2; color: white; }
-.newsletter-title { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
-.newsletter-sub   { font-size: 0.88rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; }
-
-.newsletter-form { position: relative; z-index: 2; display: flex; gap: 8px; }
-
-.newsletter-input {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--r-md);
-  padding: 12px 18px;
-  font-size: 0.88rem;
-  color: white;
-  outline: none;
-  width: 280px;
-  transition: var(--t);
-  font-family: var(--font);
+.nl-text { position: relative; z-index: 2; color: white; }
+.nl-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -.03em; margin-bottom: 6px; }
+.nl-sub { font-size: .88rem; color: rgba(255,255,255,.52); line-height: 1.6; }
+.nl-form { position: relative; z-index: 2; display: flex; gap: 8px; }
+.nl-input {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--r-lg); padding: 12px 18px; font-size: .88rem;
+  color: white; outline: none; width: 280px; transition: var(--t); font-family: var(--font-body);
 }
-
-.newsletter-input::placeholder { color: rgba(255, 255, 255, 0.38); }
-
-.newsletter-input:focus {
-  background: rgba(255, 255, 255, 0.13);
-  border-color: rgba(255, 255, 255, 0.32);
+.nl-input::placeholder { color: rgba(255,255,255,.36); }
+.nl-input:focus { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.32); }
+.nl-btn {
+  background: white; color: var(--accent-deeper); border-radius: var(--r-lg);
+  padding: 12px 24px; font-size: .86rem; font-weight: 700;
+  cursor: pointer; border: none; white-space: nowrap; transition: var(--t); font-family: var(--font-body);
 }
+.nl-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.18); }
 
-.newsletter-btn {
-  background: white;
-  color: var(--accent-deeper);
-  border-radius: var(--r-md);
-  padding: 12px 24px;
-  font-size: 0.86rem;
-  font-weight: 800;
-  cursor: pointer;
-  border: none;
-  white-space: nowrap;
-  transition: var(--t);
-  font-family: var(--font);
-}
-
-.newsletter-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
-footer {
-  background: var(--hero-bg);
-  color: var(--text-faint);
-  padding: 64px 32px 36px;
-}
-
+/* ── FOOTER ── */
+footer { background: var(--hero-bg); color: var(--text-faint); padding: 64px 40px 36px; }
 .footer-inner { max-width: var(--max-w); margin: 0 auto; }
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-
-.footer-logo-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-
-.footer-logo-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: var(--r-md);
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
-.footer-logo-name { font-size: 1rem; font-weight: 800; color: white; }
-
-.footer-brand-desc {
-  font-size: 0.82rem;
-  line-height: 1.7;
-  max-width: 280px;
-  color: #718096;
-}
-
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.footer-logo-icon { width: 34px; height: 34px; border-radius: var(--r-md); background: var(--accent); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.footer-logo-icon img { width: 78%; }
+.footer-logo-name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: white; }
+.footer-desc { font-size: .82rem; line-height: 1.7; max-width: 280px; color: #718096; }
 .footer-social { display: flex; gap: 8px; margin-top: 20px; }
-
-.social-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: var(--r-md);
-  background: rgba(255, 255, 255, 0.06);
-  color: #718096;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.84rem;
-  cursor: pointer;
-  border: none;
-  transition: var(--t);
-}
-
-.social-btn:hover {
-  background: var(--accent);
-  color: white;
-}
-
-.footer-col-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  margin-bottom: 16px;
-}
-
+.social-btn { width: 34px; height: 34px; border-radius: var(--r-md); background: rgba(255,255,255,.06); color: #718096; display: flex; align-items: center; justify-content: center; font-size: .84rem; cursor: pointer; border: none; transition: var(--t); overflow: hidden; }
+.social-btn:hover { background: var(--accent); }
+.social-btn img { width: 65%; }
+.footer-col-title { font-size: .72rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: .09em; margin-bottom: 16px; }
 .footer-links { display: flex; flex-direction: column; gap: 10px; }
-
-.footer-link {
-  font-size: 0.83rem;
-  color: #718096;
-  transition: var(--t);
-  cursor: pointer;
-}
-
+.footer-link { font-size: .83rem; color: #718096; transition: var(--t); cursor: pointer; display: flex; align-items: center; gap: 6px; }
 .footer-link:hover { color: white; }
-
-.footer-divider {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  margin-bottom: 24px;
-}
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.footer-copy { font-size: 0.78rem; color: #4A5568; }
-
+.footer-link img { width: 14px; height: 14px; object-fit: contain; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 24px; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-copy { font-size: .78rem; color: #4a5568; }
 .footer-badges { display: flex; gap: 8px; }
+.footer-badge { display: flex; align-items: center; gap: 5px; background: rgba(255,255,255,.05); border-radius: var(--r-sm); padding: 5px 10px; font-size: .68rem; color: #718096; font-weight: 600; }
+.footer-badge img { width: 14px; height: 14px; object-fit: contain; }
 
-.footer-badge {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--r-sm);
-  padding: 5px 10px;
-  font-size: 0.68rem;
-  color: #718096;
-  font-weight: 600;
-}
-
-/* ============================================================
-   TOAST
-============================================================ */
+/* ── TOAST ── */
 .toast {
-  position: fixed;
-  bottom: 28px;
-  left: 50%;
+  position: fixed; bottom: 28px; left: 50%;
   transform: translateX(-50%) translateY(80px);
-  background: var(--text);
-  color: white;
-  padding: 12px 22px;
-  border-radius: var(--r-md);
-  font-size: 0.85rem;
-  font-weight: 600;
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: var(--shadow-2xl);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  background: var(--gray-dark); color: white;
+  padding: 12px 22px; border-radius: var(--r-lg);
+  font-size: .85rem; font-weight: 600; z-index: 9999;
+  opacity: 0; pointer-events: none;
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 25px 50px rgba(0,0,0,.12);
+  transition: transform .25s ease, opacity .25s ease;
 }
-
 .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-/* ============================================================
-   SCROLL REVEAL — solo activado por JS, sin animaciones automáticas
-============================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .45s ease, transform .45s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rd1 { transition-delay: .05s; }
+.rd2 { transition-delay: .10s; }
+.rd3 { transition-delay: .15s; }
+.rd4 { transition-delay: .20s; }
+.rd5 { transition-delay: .25s; }
+.rd6 { transition-delay: .30s; }
 
-.reveal.visible       { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.05s; }
-.reveal-delay-2 { transition-delay: 0.10s; }
-.reveal-delay-3 { transition-delay: 0.15s; }
-.reveal-delay-4 { transition-delay: 0.20s; }
-.reveal-delay-5 { transition-delay: 0.25s; }
-.reveal-delay-6 { transition-delay: 0.30s; }
-
-/* ============================================================
-   RESPONSIVE
-============================================================ */
+/* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
-  .hero-right         { width: 250px; }
-  .category-grid      { grid-template-columns: repeat(3, 1fr); }
-  .why-grid           { grid-template-columns: 1fr 1fr; }
-  .footer-top         { grid-template-columns: 1fr 1fr; gap: 32px; }
-}
-
-@media (max-width: 900px) {
-  .cat-tab            { display: none; }
-  .search-wrapper     { display: none; }
-  .header-nav         { display: none; }
-  .hamburger          { display: flex; }
-  .hero-inner         { flex-direction: column; padding: 56px 24px 72px; }
-  .hero-right         { width: 100%; flex-direction: row; flex-wrap: wrap; gap: 10px; }
-  .stat-card          { flex: 1; min-width: 140px; }
-  .trust-bar-inner    { grid-template-columns: 1fr 1fr; }
+  .hero-right { width: 256px; }
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .trust-bar-inner { grid-template-columns: 1fr 1fr; }
   .trust-item:nth-child(2) { border-right: none; }
-  .product-grid       { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-  .newsletter-band    { flex-direction: column; text-align: center; padding: 48px 28px; }
-  .newsletter-input   { width: 240px; }
-  .why-grid           { grid-template-columns: 1fr; }
-  .page-body          { padding: 64px 24px 80px; }
 }
-
+@media (max-width: 900px) {
+  .search-wrap, .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-inner { flex-direction: column; padding: 56px 24px 72px; }
+  .hero-right { width: 100%; flex-direction: row; flex-wrap: wrap; }
+  .stat-card { flex: 1; min-width: 140px; }
+  .newsletter { flex-direction: column; text-align: center; padding: 48px 28px; }
+  .nl-input { width: 240px; }
+  .page { padding: 64px 24px 80px; }
+  .header-inner { padding: 0 24px; }
+  .cat-bar-inner { padding: 10px 24px; }
+}
 @media (max-width: 640px) {
-  .cat-tab            { display: none; }
-  .search-wrapper     { display: none; }
-  .hero-title         { font-size: 1.75rem; }
-  .hero-actions       { flex-direction: column; align-items: flex-start; }
-  .category-grid      { grid-template-columns: repeat(2, 1fr); }
-  .product-grid       { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .trust-bar-inner    { grid-template-columns: 1fr; }
-  .trust-item         { border-right: none; border-bottom: 1px solid var(--border-light); }
+  .hero-title { font-size: 1.8rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .featured-right { display: none; }
+  .nl-form { flex-direction: column; }
+  .nl-input { width: 100%; }
+  .footer-top { grid-template-columns: 1fr; }
+  .newsletter { padding: 40px 24px; }
+  .page { padding: 48px 20px 64px; }
+  .trust-bar-inner { grid-template-columns: 1fr; }
+  .trust-item { border-right: none; border-bottom: 1px solid var(--border-light); }
   .trust-item:last-child { border-bottom: none; }
-  .footer-top         { grid-template-columns: 1fr; }
-  .featured-right     { display: none; }
-  .newsletter-form    { flex-direction: column; }
-  .newsletter-input   { width: 100%; }
-  .search-submit      { display: none; }
-  .newsletter-band    { padding: 40px 24px; }
-  .page-body          { padding: 48px 20px 64px; }
 }
-
 @media (max-width: 420px) {
-  .cat-tab            { display: none; }
-  .search-wrapper     { display: none; }
-  .product-grid       { grid-template-columns: 1fr; }
-  .category-grid      { grid-template-columns: repeat(3, 1fr); }
+  .product-grid { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
- </style>
+/* SVG inline icon helper */
+svg.icon-inline { display: inline-block; vertical-align: middle; }
+</style>
 </head>
 <body>
 
-<!-- ============================================================
-     HEADER
-============================================================ -->
+<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
-    <a href="index.html" class="logo">
-      <div class="logo-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/128/9459/9459285.png" style="width:78%;"></div>
-      <div class="logo-wordmark">
+    <a href="#" class="logo">
+      <div class="logo-icon"><img src="https://cdn-icons-png.flaticon.com/128/9459/9459285.png" alt="logo"></div>
+      <div>
         <div class="logo-name">EducaKids</div>
-        <div class="logo-tagline">Materials &amp; Resources</div>
+        <div class="logo-tag">Materials &amp;amp; Resources</div>
       </div>
     </a>
-
-    <div class="search-wrapper">
+    <div class="search-wrap">
       <div class="search-bar">
         <div class="search-icon">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </div>
         <input type="search" id="searchInput" placeholder="Buscar materiales, materias, grados…" autocomplete="off">
         <button class="search-submit" onclick="triggerSearch()">Buscar</button>
       </div>
     </div>
-
-    <nav class="header-nav">
-      <a href="#catalogo" class="nav-link">Catálogo</a>
-      <a href="#materias" class="nav-link">Materias</a>
-      <a href="#" class="nav-link" onclick="setFilter('gratis')">🆓 Gratis</a>
-      <a href="#catalogo" class="nav-link nav-link-cta" onclick="setFilter('all')">Ver todos</a>
+    <nav class="nav-links">
+      <a href="#catalogo" class="nav-link" onclick="smoothTo('catalogo')">Catálogo</a>
+      <a href="#materias" class="nav-link" onclick="smoothTo('materias')">Materias</a>
+      <a href="#" class="nav-link" onclick="setFilter('gratis'); smoothTo('catalogo'); return false;">🆓 Gratis</a>
+      <a href="#catalogo" class="nav-link nav-link-cta" onclick="setFilter('all'); smoothTo('catalogo'); return false;">Ver todos</a>
     </nav>
     <button class="hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -1618,231 +596,205 @@ footer {
   </div>
 </header>
 
-<!-- CATEGORY TAB BAR -->
+<!-- CAT BAR -->
 <div class="cat-bar">
   <div class="cat-bar-inner" id="catBar">
     <button class="cat-tab active" data-filter="all">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       Todo
     </button>
-    <button class="cat-tab" data-filter="Matemática" style="width: 13.7%;"><span style="width: 20%;"><img src="https://cdn-icons-png.flaticon.com/128/15109/15109288.png" style="width:80%;"></span> Matemática</button>
-    <button class="cat-tab" data-filter="Lengua" style="width: 13.7%;"><span style="width: 20%;"><img src="https://cdn-icons-png.flaticon.com/128/3352/3352528.png" style="width:80%;"></span> Lengua</button>
-    <button class="cat-tab" data-filter="Ciencias" style="width: 13.7%;"><span style="width: 20%;"><img src="https://cdn-icons-png.flaticon.com/128/5779/5779492.png" style="width:80%;"></span> Ciencias</button>
-    <button class="cat-tab" data-filter="Sociales" style="width: 13.7%;"><span style="width: 20%;"><img src="https://cdn-icons-png.flaticon.com/128/9985/9985721.png" style="width:80%;"></span> Cs. Sociales</button>
-    <button class="cat-tab" data-filter="Arte" style="width: 13.7%;"><span style="width: 20%;"><img src="https://cdn-icons-png.flaticon.com/128/1158/1158164.png" style="width:80%;"></span> Arte</button>
-    <button class="cat-tab" data-filter="gratis" style="color:var(--green-600)"><span style="width: 20%;"><img src="https://cdn-icons-png.flaticon.com/128/752/752685.png" style="width:80%;"></span> Gratis</button>
+    <button class="cat-tab" data-filter="Matemática"><img src="https://cdn-icons-png.flaticon.com/128/15109/15109288.png" alt="">Matemática</button>
+    <button class="cat-tab" data-filter="Lengua"><img src="https://cdn-icons-png.flaticon.com/128/3352/3352528.png" alt="">Lengua</button>
+    <button class="cat-tab" data-filter="Ciencias"><img src="https://cdn-icons-png.flaticon.com/128/5779/5779492.png" alt="">Ciencias</button>
+    <button class="cat-tab" data-filter="Sociales"><img src="https://cdn-icons-png.flaticon.com/128/9985/9985721.png" alt="">Cs. Sociales</button>
+    <button class="cat-tab" data-filter="Arte"><img src="https://cdn-icons-png.flaticon.com/128/1158/1158164.png" alt="">Arte</button>
+    <button class="cat-tab" data-filter="gratis"><img src="https://cdn-icons-png.flaticon.com/128/752/752685.png" alt="">Gratis</button>
   </div>
 </div>
 
-<!-- ============================================================ 
-     HERO
-============================================================ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-mesh"></div>
-  <div class="hero-shape hero-shape-1"></div>
-  <div class="hero-shape hero-shape-2"></div>
-  <div class="hero-shape hero-shape-3"></div>
-
+  <div class="hero-shapes">
+    <div class="hero-shape hs1"></div>
+    <div class="hero-shape hs2"></div>
+    <div class="hero-shape hs3"></div>
+  </div>
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-eyebrow">
-        <span class="hero-eyebrow-dot"></span>
+        <span class="eyebrow-dot"></span>
         Tienda de materiales educativos · Argentina
       </div>
       <h1 class="hero-title">
-        <span class="word-1">Aprende con</span><br>
-        <span class="word-2">recursos de calidad</span><br>
-        <span class="word-3">premium ✦</span>
+        <span class="w1">Aprende con</span><br>
+        <span class="w2">recursos de calidad</span><br>
+        <span class="w3">premium ✦</span>
       </h1>
-      <p class="hero-subtitle">
-        PDFs listos para imprimir, diseñados por docentes profesionales.
-        Para nivel inicial, primaria y secundaria. Descarga inmediata.
-      </p>
+      <p class="hero-sub">PDFs listos para imprimir, diseñados por docentes profesionales. Para nivel inicial, primaria y secundaria. Descarga inmediata.</p>
       <div class="hero-actions">
-        <a href="#catalogo" class="btn-hero-primary" onclick="smoothScrollTo('catalogo')">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+        <a href="#catalogo" class="btn-primary" onclick="smoothTo('catalogo')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
           Explorar catálogo
         </a>
-        <a href="#" class="btn-hero-secondary" onclick="setFilter('gratis'); smoothScrollTo('catalogo'); return false;">
+        <a href="#" class="btn-secondary" onclick="setFilter('gratis'); smoothTo('catalogo'); return false;">
           🆓 Ver recursos gratis
         </a>
       </div>
       <div class="hero-trust">
-        <span class="hero-trust-item">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="trust-item-inline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           Descarga inmediata
         </span>
-        <span class="hero-trust-item">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="trust-item-inline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           Pago seguro Mercado Pago
         </span>
-        <span class="hero-trust-item">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="trust-item-inline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           Formato A4 optimizado
         </span>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="stat-card">
-        <div class="stat-icon purple"><img src="https://cdn-icons-png.flaticon.com/128/5832/5832416.png" style="
-    width: 80%;
-"></div>
-        <div class="stat-body">
+        <div class="stat-icon si-blue"><img src="https://cdn-icons-png.flaticon.com/128/5832/5832416.png" alt=""></div>
+        <div>
           <div class="stat-val">+1.200</div>
-          <div class="stat-label">Docentes satisfechos</div>
+          <div class="stat-lbl">Docentes satisfechos</div>
         </div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon green"><img src="https://cdn-icons-png.flaticon.com/128/2541/2541984.png" style="
-    width: 80%;
-"></div>
-        <div class="stat-body">
+        <div class="stat-icon si-green"><img src="https://cdn-icons-png.flaticon.com/128/2541/2541984.png" alt=""></div>
+        <div>
           <div class="stat-val">12 PDFs</div>
-          <div class="stat-label">Materiales disponibles</div>
+          <div class="stat-lbl">Materiales disponibles</div>
         </div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon amber"><img src="https://cdn-icons-png.flaticon.com/128/1477/1477046.png" style="
-    width: 80%;
-"></div>
-        <div class="stat-body">
+        <div class="stat-icon si-amber"><img src="https://cdn-icons-png.flaticon.com/128/1477/1477046.png" alt=""></div>
+        <div>
           <div class="stat-val">4.8 / 5</div>
-          <div class="stat-label">Calificación promedio</div>
+          <div class="stat-lbl">Calificación promedio</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Wave -->
-<svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0,32 C240,0 480,56 720,32 C960,8 1200,56 1440,32 L1440,56 L0,56 Z" fill="var(--bg-page)"></path>
+<!-- WAVE -->
+<svg style="display:block;width:100%;margin-top:-2px;color:var(--bg)" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,32 C240,0 480,56 720,32 C960,8 1200,56 1440,32 L1440,56 L0,56 Z" fill="currentColor"/>
 </svg>
 
-<!-- ============================================================
-     TRUST BAR
-============================================================ -->
+<!-- TRUST BAR -->
 <div class="trust-bar reveal visible">
   <div class="trust-bar-inner">
     <div class="trust-item">
-      <div class="trust-item-icon ti-purple"><img src="https://cdn-icons-png.flaticon.com/128/4303/4303996.png" style="width:80%;"></div>
-      <div class="trust-item-text">
-        <div class="trust-item-label">Descarga Inmediata</div>
-        <div class="trust-item-sub">PDF disponible al instante</div>
+      <div class="ti-icon ti-blue"><img src="https://cdn-icons-png.flaticon.com/128/4303/4303996.png" alt=""></div>
+      <div>
+        <div class="ti-lbl">Descarga Inmediata</div>
+        <div class="ti-sub">PDF disponible al instante</div>
       </div>
     </div>
     <div class="trust-item">
-      <div class="trust-item-icon ti-green"><img src="https://cdn-icons-png.flaticon.com/128/283/283769.png" style="width:80%;"></div>
-      <div class="trust-item-text">
-        <div class="trust-item-label">Pago Seguro</div>
-        <div class="trust-item-sub">Procesado por Mercado Pago</div>
+      <div class="ti-icon ti-green"><img src="https://cdn-icons-png.flaticon.com/128/283/283769.png" alt=""></div>
+      <div>
+        <div class="ti-lbl">Pago Seguro</div>
+        <div class="ti-sub">Procesado por Mercado Pago</div>
       </div>
     </div>
     <div class="trust-item">
-      <div class="trust-item-icon ti-amber"><img src="https://cdn-icons-png.flaticon.com/128/1497/1497542.png" style="width:80%;"></div>
-      <div class="trust-item-text">
-        <div class="trust-item-label">Listo para Imprimir</div>
-        <div class="trust-item-sub">Formato A4 optimizado</div>
+      <div class="ti-icon ti-amber"><img src="https://cdn-icons-png.flaticon.com/128/1497/1497542.png" alt=""></div>
+      <div>
+        <div class="ti-lbl">Listo para Imprimir</div>
+        <div class="ti-sub">Formato A4 optimizado</div>
       </div>
     </div>
     <div class="trust-item">
-      <div class="trust-item-icon ti-blue"><div class="stat-icon amber"><img src="https://cdn-icons-png.flaticon.com/128/1477/1477046.png" style="
-    width: 80%;
-"></div></div>
-      <div class="trust-item-text">
-        <div class="trust-item-label">Calidad Premium</div>
-        <div class="trust-item-sub">Diseñado por docentes</div>
+      <div class="ti-icon ti-blue"><img src="https://cdn-icons-png.flaticon.com/128/1477/1477046.png" alt=""></div>
+      <div>
+        <div class="ti-lbl">Calidad Premium</div>
+        <div class="ti-sub">Diseñado por docentes</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ============================================================
-     PAGE BODY
-============================================================ -->
-<main class="page-body">
+<!-- PAGE BODY -->
+<main class="page">
 
-  <!-- CATEGORY CARDS GRID -->
-  <section id="materias" style="margin-top: 48px;">
+  <!-- CATEGORY CARDS -->
+  <section id="materias" style="margin-top:48px">
     <div class="section-head reveal visible">
       <div>
         <div class="section-label">
-          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:12px;height:12px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           Categorías
         </div>
         <h2 class="section-title">Explorá por materia</h2>
       </div>
-      <a href="#catalogo" class="section-link" onclick="setFilter('all')">
+      <a href="#catalogo" class="section-link" onclick="setFilter('all'); smoothTo('catalogo'); return false;">
         Ver todo el catálogo
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
-    <div class="category-grid">
-      <div class="cat-card cat-mat reveal reveal-delay-1 visible" onclick="setFilter('Matemática'); smoothScrollTo('catalogo')">
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-icon">📐</div>
-        <div class="cat-card-name">Matemática</div>
-        <div class="cat-card-count">4 materiales</div>
+    <div class="cat-grid">
+      <div class="cat-card cc-mat reveal rd1 visible" onclick="setFilter('Matemática'); smoothTo('catalogo')">
+        <div class="cat-overlay"></div>
+        <div class="cat-icon">📐</div>
+        <div class="cat-name">Matemática</div>
+        <div class="cat-count">4 materiales</div>
       </div>
-      <div class="cat-card cat-len reveal reveal-delay-2 visible" onclick="setFilter('Lengua'); smoothScrollTo('catalogo')">
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-icon">📖</div>
-        <div class="cat-card-name">Lengua</div>
-        <div class="cat-card-count">4 materiales</div>
+      <div class="cat-card cc-len reveal rd2 visible" onclick="setFilter('Lengua'); smoothTo('catalogo')">
+        <div class="cat-overlay"></div>
+        <div class="cat-icon">📖</div>
+        <div class="cat-name">Lengua</div>
+        <div class="cat-count">4 materiales</div>
       </div>
-      <div class="cat-card cat-cie reveal reveal-delay-3 visible" onclick="setFilter('Ciencias'); smoothScrollTo('catalogo')">
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-icon">🔬</div>
-        <div class="cat-card-name">Ciencias</div>
-        <div class="cat-card-count">2 materiales</div>
+      <div class="cat-card cc-cie reveal rd3 visible" onclick="setFilter('Ciencias'); smoothTo('catalogo')">
+        <div class="cat-overlay"></div>
+        <div class="cat-icon">🔬</div>
+        <div class="cat-name">Ciencias</div>
+        <div class="cat-count">2 materiales</div>
       </div>
-      <div class="cat-card cat-soc reveal reveal-delay-4 visible" onclick="setFilter('Sociales'); smoothScrollTo('catalogo')">
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-icon">🌍</div>
-        <div class="cat-card-name">Cs. Sociales</div>
-        <div class="cat-card-count">2 materiales</div>
+      <div class="cat-card cc-soc reveal rd4 visible" onclick="setFilter('Sociales'); smoothTo('catalogo')">
+        <div class="cat-overlay"></div>
+        <div class="cat-icon">🌍</div>
+        <div class="cat-name">Cs. Sociales</div>
+        <div class="cat-count">2 materiales</div>
       </div>
-      <div class="cat-card cat-art reveal reveal-delay-5 visible" onclick="setFilter('Arte'); smoothScrollTo('catalogo')">
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-icon">🎨</div>
-        <div class="cat-card-name">Arte</div>
-        <div class="cat-card-count">2 materiales</div>
+      <div class="cat-card cc-art reveal rd5 visible" onclick="setFilter('Arte'); smoothTo('catalogo')">
+        <div class="cat-overlay"></div>
+        <div class="cat-icon">🎨</div>
+        <div class="cat-name">Arte</div>
+        <div class="cat-count">2 materiales</div>
       </div>
-      <div class="cat-card cat-ini reveal reveal-delay-6 visible" onclick="setFilter('gratis'); smoothScrollTo('catalogo')">
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-icon">🆓</div>
-        <div class="cat-card-name">Gratis</div>
-        <div class="cat-card-count">3 materiales</div>
+      <div class="cat-card cc-ini reveal rd6 visible" onclick="setFilter('gratis'); smoothTo('catalogo')">
+        <div class="cat-overlay"></div>
+        <div class="cat-icon">🆓</div>
+        <div class="cat-name">Gratis</div>
+        <div class="cat-count">3 materiales</div>
       </div>
     </div>
   </section>
 
   <!-- FEATURED BANNER -->
-  <div class="featured-banner reveal visible">
-    <div class="featured-banner-bg"></div>
+  <div class="featured reveal visible">
+    <div class="featured-bg"></div>
     <div class="featured-content">
       <div class="featured-badge">⚡ Más descargado esta semana</div>
       <div class="featured-title">Cuadernillo de Actividades<br>para Nivel Inicial</div>
-      <div class="featured-sub">El material más popular de la tienda. Ilustraciones coloridas, trazado de letras y actividades y mucho mas. Ideal 2–7 años.</div>
+      <div class="featured-sub">El material más popular de la tienda. Ilustraciones coloridas, trazado de letras y actividades. Ideal 2–7 años.</div>
       <a href="producto.html?id=1" class="btn-featured">
-        Ver material Educativo
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        Ver material educativo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
     <div class="featured-right">
-      <div class="featured-stat-card">
-        <div class="fsc-val">418</div>
-        <div class="fsc-lbl">Calificaciones</div>
-      </div>
-      <div class="featured-stat-card">
-        <div class="fsc-val">4.9★</div>
-        <div class="fsc-lbl">Valoración</div>
-      </div>
-      <div class="featured-stat-card">
-        <div class="fsc-val">$2990</div>
-        <div class="fsc-lbl">Precio</div>
-      </div>
+      <div class="fsc"><div class="fsc-val">418</div><div class="fsc-lbl">Calificaciones</div></div>
+      <div class="fsc"><div class="fsc-val">4.9★</div><div class="fsc-lbl">Valoración</div></div>
+      <div class="fsc"><div class="fsc-val">$2990</div><div class="fsc-lbl">Precio</div></div>
     </div>
   </div>
 
@@ -1851,411 +803,51 @@ footer {
     <div class="section-head reveal visible">
       <div>
         <div class="section-label">
-          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:12px;height:12px"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
           Catálogo completo
         </div>
         <h2 class="section-title">Materiales educativos PDF</h2>
       </div>
       <span class="results-meta">
-        <span class="results-count" id="resultsCount">11</span>
+        <span class="results-count" id="resultsCount">6</span>
         <span>resultados</span>
       </span>
     </div>
-
-    <!-- FILTER ROW -->
     <div class="filter-row reveal visible">
       <div class="filter-pills" id="filterPills">
-        <button class="filter-pill active" data-filter="all">
-          <span class="pip" style="background:var(--brand-300)"></span>
-          Todos
-        </button>
+        <button class="filter-pill active" data-filter="all">Todos</button>
         <button class="filter-pill" data-filter="Matemática">📐 Matemática</button>
         <button class="filter-pill" data-filter="Lengua">📖 Lengua</button>
         <button class="filter-pill" data-filter="Ciencias">🔬 Ciencias</button>
         <button class="filter-pill" data-filter="Sociales">🌍 Sociales</button>
         <button class="filter-pill" data-filter="Arte">🎨 Arte</button>
-        <button class="filter-pill" data-filter="gratis" style="border-color:rgba(5,150,105,.3);color:var(--green-600)">🆓 Solo gratis</button>
+        <button class="filter-pill" data-filter="gratis" style="color:var(--green)">🆓 Solo gratis</button>
       </div>
     </div>
-
-    <div class="product-grid" id="productGrid">
-    <article class="product-card" onclick="window.location.href='producto.html?id=1'">
-      <div class="card-badges"><span class="chip chip-hot">🔥 Top ventas</span></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap">
-        <img src="https://github.com/jgnurniu/EducaKids-Shop/blob/main/4.jpeg?raw=true" alt="Cuadernillo de Actividades" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e0eaff,#c7d7fe)'; this.remove()">
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Cuadernillo de Actividades</h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77V2z" opacity=".2"></path><path d="M12 2v15.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">4.8</span>
-          <span class="rating-ct">(418)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip">Varios</span>
-          <span class="card-chip">1° a 6° grado</span>
-          <span class="card-chip">106 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-main">
-         <span class="price-sym">$</span>
-         <span class="price-int">2.990</span>
-         <span class="price-dec">,00</span>
-       </div>
-       <div class="price-installment">en 3 cuotas sin interés</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=1" class="btn-card-primary">
-         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-         Ver material
-       </a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=2'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap">
-        <img src="https://github.com/jgnurniu/EducaKids-Shop/blob/main/8.jpeg?raw=true" alt="Cuadernillo de Tecnologia 5°" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e0eaff,#c7d7fe)'; this.remove()">
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Cuadernillo de Tecnologia 5°</h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77V2z" opacity=".2"></path><path d="M12 2v15.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">4.9</span>
-          <span class="rating-ct">(218)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip">Tecnologia</span>
-          <span class="card-chip">5° grado</span>
-          <span class="card-chip">41 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-main">
-         <span class="price-sym">$</span>
-         <span class="price-int">2.990</span>
-         <span class="price-dec">,00</span>
-       </div>
-       <div class="price-installment">en 3 cuotas sin interés</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=2" class="btn-card-primary">
-         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-         Ver material
-       </a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=3'">
-      <div class="card-badges"><span class="chip chip-nuevo">✨ Nuevo</span></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap">
-        <img src="https://github.com/jgnurniu/EducaKids-Shop/blob/main/13.jpeg?raw=true" alt="Cuadernillo para Trabajar la Dislexia" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e0eaff,#c7d7fe)'; this.remove()">
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Cuadernillo para Trabajar la Dislexia</h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77V2z" opacity=".2"></path><path d="M12 2v15.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">4.7</span>
-          <span class="rating-ct">(89)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip">Dislexia</span>
-          <span class="card-chip">3° grado</span>
-          <span class="card-chip">26 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-main">
-         <span class="price-sym">$</span>
-         <span class="price-int">2.990</span>
-         <span class="price-dec">,00</span>
-       </div>
-       <div class="price-installment">en 3 cuotas sin interés</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=3" class="btn-card-primary">
-         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-         Ver material
-       </a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=4'">
-      <div class="card-badges"><span class="chip chip-gratis">🆓 Gratis</span></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap">
-        <img src="https://github.com/jgnurniu/EducaKids-Shop/blob/main/19.webp?raw=true" alt="IA para Docentes Tu Guía Definitiva" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e0eaff,#c7d7fe)'; this.remove()">
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">IA para Docentes Tu Guía Definitiva</h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77V2z" opacity=".2"></path><path d="M12 2v15.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">4.6</span>
-          <span class="rating-ct">(96)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip">IA</span>
-          <span class="card-chip">Profesores</span>
-          <span class="card-chip">7 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="https://jgnurniu.github.io/EducaKids/ia.html" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=5'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap" style="background: linear-gradient(135deg, rgb(224, 234, 255), rgb(199, 215, 254));">
-        
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title"></h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">0</span>
-          <span class="rating-ct">(0)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip"></span>
-          <span class="card-chip"></span>
-          <span class="card-chip">0 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=5" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=6'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap" style="background: linear-gradient(135deg, rgb(224, 234, 255), rgb(199, 215, 254));">
-        
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title"></h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">0</span>
-          <span class="rating-ct">(0)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip"></span>
-          <span class="card-chip"></span>
-          <span class="card-chip">0 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=6" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=7'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap" style="background: linear-gradient(135deg, rgb(224, 234, 255), rgb(199, 215, 254));">
-        
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title"></h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">0</span>
-          <span class="rating-ct">(0)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip"></span>
-          <span class="card-chip"></span>
-          <span class="card-chip">0 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=7" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=8'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap" style="background: linear-gradient(135deg, rgb(224, 234, 255), rgb(199, 215, 254));">
-        
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title"></h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">0</span>
-          <span class="rating-ct">(0)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip"></span>
-          <span class="card-chip"></span>
-          <span class="card-chip">0 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=8" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=9'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap" style="background: linear-gradient(135deg, rgb(224, 234, 255), rgb(199, 215, 254));">
-        
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title"></h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">0</span>
-          <span class="rating-ct">(0)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip"></span>
-          <span class="card-chip"></span>
-          <span class="card-chip">0 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=9" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=10'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap" style="background: linear-gradient(135deg, rgb(224, 234, 255), rgb(199, 215, 254));">
-        
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title"></h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">0</span>
-          <span class="rating-ct">(0)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip"></span>
-          <span class="card-chip"></span>
-          <span class="card-chip">0 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=10" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article>
-    <article class="product-card" onclick="window.location.href='producto.html?id=11'">
-      <div class="card-badges"></div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap" style="background: linear-gradient(135deg, rgb(224, 234, 255), rgb(199, 215, 254));">
-        
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title"></h3>
-        <div class="card-rating">
-          <div class="stars-wrap"><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-          <span class="rating-val">0</span>
-          <span class="rating-ct">(0)</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip"></span>
-          <span class="card-chip"></span>
-          <span class="card-chip">0 págs.</span>
-        </div>
-        <div class="card-price-block">
-          <div class="price-free-tag">Gratis</div>
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()"><a href="producto.html?id=11" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a></div>
-    </article></div>
+    <div class="product-grid" id="productGrid"></div>
   </section>
 
   <!-- WHY US -->
-  <section class="why-section reveal visible">
-    <div class="section-head">
+  <section style="margin-top:80px;margin-bottom:0">
+    <div class="section-head reveal visible">
       <div>
         <div class="section-label">¿Por qué elegirnos?</div>
         <h2 class="section-title">Calidad que marca la diferencia</h2>
       </div>
     </div>
     <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon-wrap wi-purple"><img src="https://cdn-icons-png.flaticon.com/128/4196/4196322.png" style="width:65%;"></div>
+      <div class="why-card reveal rd1 visible">
+        <div class="why-icon wi-blue"><img src="https://cdn-icons-png.flaticon.com/128/4196/4196322.png" alt=""></div>
         <div class="why-title">Diseñados por docentes reales</div>
         <div class="why-desc">Cada material fue creado y revisado por docentes con experiencia en el aula. No son plantillas genéricas — son recursos pedagógicos reales.</div>
       </div>
-      <div class="why-card">
-        <div class="why-icon-wrap wi-green"><img src="https://cdn-icons-png.flaticon.com/128/381/381164.png" style="width:65%;"></div>
+      <div class="why-card reveal rd2 visible">
+        <div class="why-icon wi-green"><img src="https://cdn-icons-png.flaticon.com/128/381/381164.png" alt=""></div>
         <div class="why-title">Optimizados para imprimir</div>
         <div class="why-desc">Formato A4, resolución 300 dpi. Se ven perfectos tanto en pantalla como impresos. Funcionan en blanco y negro y en color.</div>
       </div>
-      <div class="why-card">
-        <div class="why-icon-wrap wi-amber"><img src="https://cdn-icons-png.flaticon.com/128/7512/7512520.png" style="width: 65%;"></div>
+      <div class="why-card reveal rd3 visible">
+        <div class="why-icon wi-amber"><img src="https://cdn-icons-png.flaticon.com/128/7512/7512520.png" alt=""></div>
         <div class="why-title">Acceso instantáneo</div>
         <div class="why-desc">Tras el pago recibís el PDF al instante. Sin esperas, sin envíos. Descargás y listo para usar en minutos.</div>
       </div>
@@ -2263,61 +855,53 @@ footer {
   </section>
 
   <!-- NEWSLETTER -->
-  <div class="newsletter-band reveal visible">
-    <div class="newsletter-text">
-      <div class="newsletter-title"><img src="https://cdn-icons-png.flaticon.com/128/1139/1139982.png" style="
-    width: 10%;
-"> Recibí recursos gratis</div>
-      <div class="newsletter-sub">Suscribite y te enviamos materiales educativos gratuitos cada semana.</div>
+  <div class="newsletter reveal visible" style="margin-top:80px">
+    <div class="nl-text">
+      <div class="nl-title">🎁 Recibí recursos gratis</div>
+      <div class="nl-sub">Suscribite y te enviamos materiales educativos gratuitos cada semana.</div>
     </div>
-    <div class="newsletter-form">
-      <input class="newsletter-input" type="email" placeholder="tu@email.com">
-      <button class="newsletter-btn" onclick="showToast('✅ ¡Gracias! Te enviaremos recursos gratis pronto.')">Suscribirme</button>
+    <div class="nl-form">
+      <input class="nl-input" type="email" id="nlEmail" placeholder="tu@email.com">
+      <button class="nl-btn" onclick="sendNewsletter()">Suscribirme</button>
     </div>
-  </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('2wL78SHIuCTgC2vYB')
-</script>
+  </div>
 
 </main>
 
-<!-- ============================================================
-     FOOTER
-============================================================ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo-wrap">
-          <div class="footer-logo-icon"><img src="https://cdn-icons-png.flaticon.com/128/9459/9459285.png" style="width:78%;"></div>
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-icon"><img src="https://cdn-icons-png.flaticon.com/128/9459/9459285.png" alt=""></div>
           <span class="footer-logo-name">EducaKids Shop</span>
         </div>
-        <p class="footer-brand-desc">La tienda de materiales educativos PDF más completa de Argentina. Recursos imprimibles para docentes y familias.</p>
+        <p class="footer-desc">La tienda de materiales educativos PDF más completa de Argentina. Recursos imprimibles para docentes y familias.</p>
         <div class="footer-social">
-          <button class="social-btn" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" style="width:70%;"></button>
-          <button class="social-btn" title="Facebook"><a href="https://www.facebook.com/profile.php?id=61582255155372"><img src="https://cdn-icons-png.flaticon.com/128/226/226234.png" alt="Facebook" style="width:70%;"></a></button>
-          <button class="social-btn" title="WhatsApp"><a href="https://wa.me/5493812096455"><img src="https://cdn-icons-png.flaticon.com/128/174/174879.png" alt="whatsapp" style="width:70%;"></a></button>
+          <button class="social-btn" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="IG"></button>
+          <button class="social-btn" title="Facebook" onclick="window.open('https://www.facebook.com/profile.php?id=61582255155372','_blank')"><img src="https://cdn-icons-png.flaticon.com/128/226/226234.png" alt="FB"></button>
+          <button class="social-btn" title="WhatsApp" onclick="window.open('https://wa.me/5493812096455','_blank')"><img src="https://cdn-icons-png.flaticon.com/128/174/174879.png" alt="WA"></button>
         </div>
       </div>
       <div>
         <div class="footer-col-title">Catálogo</div>
         <div class="footer-links">
-          <span class="footer-link" onclick="setFilter('Matemática'); smoothScrollTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/1172/1172548.png" style="width:8%;"> Matemática</span>
-          <span class="footer-link" onclick="setFilter('Lengua'); smoothScrollTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/4797/4797975.png" style="width:8%;"> Lengua</span>
-          <span class="footer-link" onclick="setFilter('Ciencias'); smoothScrollTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/3063/3063174.png" style="width:8%;"> Ciencias</span>
-          <span class="footer-link" onclick="setFilter('Sociales'); smoothScrollTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/9985/9985721.png" style="width:8%;"> Cs. Sociales</span>
-          <span class="footer-link" onclick="setFilter('Arte'); smoothScrollTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/1158/1158164.png" style="width:8%;"> Arte</span>
+          <span class="footer-link" onclick="setFilter('Matemática'); smoothTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/1172/1172548.png" alt=""> Matemática</span>
+          <span class="footer-link" onclick="setFilter('Lengua'); smoothTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/4797/4797975.png" alt=""> Lengua</span>
+          <span class="footer-link" onclick="setFilter('Ciencias'); smoothTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/3063/3063174.png" alt=""> Ciencias</span>
+          <span class="footer-link" onclick="setFilter('Sociales'); smoothTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/9985/9985721.png" alt=""> Cs. Sociales</span>
+          <span class="footer-link" onclick="setFilter('Arte'); smoothTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/1158/1158164.png" alt=""> Arte</span>
         </div>
       </div>
       <div>
         <div class="footer-col-title">Recursos</div>
         <div class="footer-links">
-          <span class="footer-link" onclick="setFilter('gratis'); smoothScrollTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/752/752685.png" style="width:8%;"> Gratis</span>
-          <span class="footer-link" onclick="setFilter('nuevo'); smoothScrollTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/5166/5166936.png" style="width:8%;"> Nuevos</span>
-          <span class="footer-link"><img src="https://cdn-icons-png.flaticon.com/128/685/685388.png" style="width:8%;"> Nivel inicial</span>
-          <span class="footer-link"><img src="https://cdn-icons-png.flaticon.com/128/685/685388.png" style="width:8%;"> Primaria</span>
-          <span class="footer-link"><img src="https://cdn-icons-png.flaticon.com/128/685/685388.png" style="width:8%;"> Secundaria</span>
+          <span class="footer-link" onclick="setFilter('gratis'); smoothTo('catalogo')"><img src="https://cdn-icons-png.flaticon.com/128/752/752685.png" alt=""> Gratis</span>
+          <span class="footer-link"><img src="https://cdn-icons-png.flaticon.com/128/5166/5166936.png" alt=""> Nuevos</span>
+          <span class="footer-link"><img src="https://cdn-icons-png.flaticon.com/128/685/685388.png" alt=""> Nivel inicial</span>
+          <span class="footer-link"><img src="https://cdn-icons-png.flaticon.com/128/685/685388.png" alt=""> Primaria</span>
+          <span class="footer-link"><img src="https://cdn-icons-png.flaticon.com/128/685/685388.png" alt=""> Secundaria</span>
         </div>
       </div>
       <div>
@@ -2334,192 +918,241 @@ footer {
     <div class="footer-bottom">
       <p class="footer-copy">© 2025 EducaKids Shop · Todos los derechos reservados · Argentina</p>
       <div class="footer-badges">
-        <span class="footer-badge"><img src="https://cdn-icons-png.flaticon.com/128/4516/4516957.png" style="width:12%;"> SSL</span>
-        <span class="footer-badge"><img src="https://cdn-icons-png.flaticon.com/128/9063/9063313.png" style="width:10%;"> Mercado Pago</span>
-        <span class="footer-badge"><img src="https://cdn-icons-png.flaticon.com/128/15266/15266347.png" style="width:10%;"> PDF digital</span>
+        <span class="footer-badge"><img src="https://cdn-icons-png.flaticon.com/128/4516/4516957.png" alt=""> SSL</span>
+        <span class="footer-badge"><img src="https://cdn-icons-png.flaticon.com/128/9063/9063313.png" alt=""> Mercado Pago</span>
+        <span class="footer-badge"><img src="https://cdn-icons-png.flaticon.com/128/15266/15266347.png" alt=""> PDF digital</span>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- TOAST -->
-<div class="toast" id="toast">✅ ¡Gracias! Te enviaremos recursos gratis pronto.</div>
+<div class="toast" id="toast">✅ Mensaje</div>
 
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
 <script>
-/* ===== SVG STAR ICON ===== */
-const STAR_FULL  = `<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
-const STAR_HALF  = `<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77V2z" opacity=".2"/><path d="M12 2v15.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
-const STAR_EMPTY = `<svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
-
-function starsHtml(rating) {
-  let html = '';
-  for (let i = 1; i <= 5; i++) {
-    if (rating >= i) html += STAR_FULL;
-    else if (rating >= i - .5) html += STAR_HALF;
-    else html += STAR_EMPTY;
-  }
-  return html;
-}
-
-/* ===== PRODUCTS ===== */
+/* ── DATA ── */
 const productos = [
-  { id:1,  nombre:"Cuadernillo de Actividades",       descripcion:"Más de 500 actividades para aprender jugando, Material creativido.",      materia:"Varios", grado:"1° a 6° grado",  paginas:106, precio:2990, rating:4.8, reviews:418, badges:["hot"],        imagen:"https://github.com/jgnurniu/EducaKids-Shop/blob/main/4.jpeg?raw=true",      mercadopago:"https://mpago.la/2EU3CRX" },
-    { id:2, nombre:"Cuadernillo de Tecnologia 5°", descripcion:"Fichas de trabajo para comprensión lectora y escritura en segundo grado. Textos cortos, preguntas de comprensión y ejercicios de caligrafía.", materia:"Tecnologia", grado:"5° grado", paginas:41, precio:2990, rating:4.9, reviews:218, badges:[""],          imagen:"https://github.com/jgnurniu/EducaKids-Shop/blob/main/8.jpeg?raw=true",       mercadopago:"https://mpago.la/2d2BSrC" },
-  { id:3,  nombre:"Cuadernillo para Trabajar la Dislexia",  descripcion:"Material diseñado específicamente para niños con dislexia. Actividades progresivas que facilitan la lectura, mejoran la concentración y fortalecen la confianza.",           materia:"Dislexia",   grado:"3° grado",       paginas:26, precio:2990, rating:4.7, reviews:89,  badges:["nuevo"],        imagen:"https://github.com/jgnurniu/EducaKids-Shop/blob/main/13.jpeg?raw=true",        mercadopago:"https://jgnurniu.github.io/EducaKids-Shop/gracias3.html" },
-  { id:4,  nombre:"IA para Docentes Tu Guía Definitiva",   descripcion:"Domina la IA para ahorrar tiempo, personalizar el aprendizaje y transformar tus clases.", materia:"IA", grado:"Profesores", paginas:7, precio:0, rating:4.6, reviews:96,  badges:["gratis"],       imagen:"https://github.com/jgnurniu/EducaKids-Shop/blob/main/19.webp?raw=true",   href:"https://jgnurniu.github.io/EducaKids/ia.html"  , mercadopago:"https://jgnurniu.github.io/EducaKids/ia.html" },
- { id:5,  nombre:"Cuadernillo de Actividades Preescolar",   descripcion:"Material de trabajo Grafomotricidad, con ejercicios de coordinación fina, para que la mano se suelte y tu hijo aprenda a dominar el lapiz antes de entrar de lleno a la alfabetización.", materia:"Grafomotricidad", grado:"Padres", paginas:108, precio:2990, rating:4.2, reviews:140,  badges:["nuevo"],       imagen:"https://github.com/jgnurniu/EducaKids-Shop/blob/main/grafo4.jpeg?raw=true" , mercadopago:"https://mpago.li/17C4ZKZ" },
- { id:6,  nombre:"Cuadernillo de Grafomotricidad",   descripcion:"Material de trabajo Grafomotricidad con +18 Actividades para niños de 3 años para adelante.", materia:"Grafomotricidad", grado:"Padres", paginas:21, precio:2990, rating:4.9, reviews:95,  badges:["hot"],       imagen:"https://github.com/jgnurniu/EducaKids-Shop/blob/main/grafo5.jpeg?raw=true" , mercadopago:"https://mpago.li/1YZXc44" },
-
+  {
+    id: 1,
+    nombre: "Cuadernillo de Actividades",
+    materia: "Varios",
+    grado: "1° a 6° grado",
+    paginas: 106,
+    precio: 2990,
+    rating: 4.8,
+    reviews: 418,
+    badges: ["hot"],
+    imagen: "https://github.com/jgnurniu/EducaKids-Shop/blob/main/4.jpeg?raw=true",
+    mercadopago: "https://mpago.la/2EU3CRX"
+  },
+  {
+    id: 2,
+    nombre: "Cuadernillo de Tecnología 5°",
+    materia: "Tecnologia",
+    grado: "5° grado",
+    paginas: 41,
+    precio: 2990,
+    rating: 4.9,
+    reviews: 218,
+    badges: [],
+    imagen: "https://github.com/jgnurniu/EducaKids-Shop/blob/main/8.jpeg?raw=true",
+    mercadopago: "https://mpago.la/2d2BSrC"
+  },
+  {
+    id: 3,
+    nombre: "Cuadernillo para Trabajar la Dislexia",
+    materia: "Dislexia",
+    grado: "3° grado",
+    paginas: 26,
+    precio: 2990,
+    rating: 4.7,
+    reviews: 89,
+    badges: ["nuevo"],
+    imagen: "https://github.com/jgnurniu/EducaKids-Shop/blob/main/13.jpeg?raw=true",
+    mercadopago: "https://jgnurniu.github.io/EducaKids-Shop/gracias3.html"
+  },
+  {
+    id: 4,
+    nombre: "IA para Docentes — Tu Guía Definitiva",
+    materia: "IA",
+    grado: "Profesores",
+    paginas: 7,
+    precio: 0,
+    rating: 4.6,
+    reviews: 96,
+    badges: ["gratis"],
+    imagen: "https://github.com/jgnurniu/EducaKids-Shop/blob/main/19.webp?raw=true",
+    mercadopago: "https://jgnurniu.github.io/EducaKids/ia.html"
+  },
+  {
+    id: 5,
+    nombre: "Cuadernillo de Actividades Preescolar",
+    materia: "Grafomotricidad",
+    grado: "Padres",
+    paginas: 108,
+    precio: 2990,
+    rating: 4.2,
+    reviews: 140,
+    badges: ["nuevo"],
+    imagen: "https://github.com/jgnurniu/EducaKids-Shop/blob/main/grafo4.jpeg?raw=true",
+    mercadopago: "https://mpago.li/17C4ZKZ"
+  },
+  {
+    id: 6,
+    nombre: "Cuadernillo de Grafomotricidad",
+    materia: "Grafomotricidad",
+    grado: "Padres",
+    paginas: 21,
+    precio: 2990,
+    rating: 4.9,
+    reviews: 95,
+    badges: ["hot"],
+    imagen: "https://github.com/jgnurniu/EducaKids-Shop/blob/main/grafo5.jpeg?raw=true",
+    mercadopago: "https://mpago.li/1YZXc44"
+  }
 ];
 
-/* ===== BADGE MAP ===== */
-const BADGE_MAP = {
-  nuevo:  `<span class="chip chip-nuevo">✨ Nuevo</span>`,
-  gratis: `<span class="chip chip-gratis">🆓 Gratis</span>`,
-  hot:    `<span class="chip chip-hot">🔥 Top ventas</span>`,
-  sale:   `<span class="chip chip-sale">⚡ Oferta</span>`,
-};
+/* ── STARS ── */
+const FULL = '<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+const HALF = '<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77V2z" opacity=".2"/><path d="M12 2v15.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+const EMPTY= '<svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
 
-/* ===== CARD ===== */
-function createCard(p) {
-  const isFree = p.precio === 0;
-  const badgeHtml = (p.badges||[]).map(b => BADGE_MAP[b]||'').join('');
-
-  const priceHtml = isFree
-    ? `<div class="price-free-tag">Gratis</div>`
-    : `<div class="price-main">
-         <span class="price-sym">$</span>
-         <span class="price-int">${Math.floor(p.precio).toLocaleString('es-AR')}</span>
-         <span class="price-dec">,00</span>
-       </div>
-       <div class="price-installment">en 3 cuotas sin interés</div>`;
-
-  const ctaHtml = isFree
-    ? `<a href="producto.html?id=${p.id}" class="btn-card-primary btn-card-free">📥 Ver y descargar gratis</a>`
-    : `<a href="producto.html?id=${p.id}" class="btn-card-primary">
-         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-         Ver material
-       </a>`;
-
-  return `
-    <article class="product-card" onclick="window.location.href='producto.html?id=${p.id}'">
-      <div class="card-badges">${badgeHtml}</div>
-      <button class="card-wish" onclick="event.stopPropagation(); showToast('❤️ Guardado en favoritos')">♡</button>
-      <div class="card-img-wrap">
-        <img src="${p.imagen}" alt="${p.nombre}" loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(135deg,#e0eaff,#c7d7fe)'; this.remove()">
-        <div class="card-img-overlay"></div>
-        <div class="card-pdf-label">📄 PDF imprimible</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">${p.nombre}</h3>
-        <div class="card-rating">
-          <div class="stars-wrap">${starsHtml(p.rating)}</div>
-          <span class="rating-val">${p.rating}</span>
-          <span class="rating-ct">(${p.reviews.toLocaleString()})</span>
-        </div>
-        <div class="card-chips">
-          <span class="card-chip">${p.materia}</span>
-          <span class="card-chip">${p.grado}</span>
-          <span class="card-chip">${p.paginas} págs.</span>
-        </div>
-        <div class="card-price-block">
-          ${priceHtml}
-          <div class="price-download-tag">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Descarga inmediata
-          </div>
-        </div>
-      </div>
-      <div class="card-cta" onclick="event.stopPropagation()">${ctaHtml}</div>
-    </article>`;
+function stars(r) {
+  let h = '';
+  for (let i = 1; i <= 5; i++) {
+    if (r >= i) h += FULL;
+    else if (r >= i - 0.5) h += HALF;
+    else h += EMPTY;
+  }
+  return h;
 }
 
-/* ===== STATE ===== */
+/* ── BADGE MAP ── */
+const BADGES = {
+  nuevo: '<span class="chip chip-new">✨ Nuevo</span>',
+  gratis: '<span class="chip chip-free">🆓 Gratis</span>',
+  hot: '<span class="chip chip-hot">🔥 Top ventas</span>'
+};
+
+/* ── BUILD CARD ── */
+function buildCard(p) {
+  const free = p.precio === 0;
+  const badgesHtml = (p.badges || []).map(b => BADGES[b] || '').join('');
+  const priceHtml = free
+    ? '<div class="price-free">Gratis</div>'
+    : `<div class="price-main">
+        <span class="price-sym">$</span>
+        <span class="price-int">${Math.floor(p.precio).toLocaleString('es-AR')}</span>
+        <span class="price-dec">,00</span>
+       </div>
+       <div class="price-install">en 3 cuotas sin interés</div>`;
+  const ctaHtml = free
+    ? `<a href="producto.html?id=${p.id}" class="btn-card btn-card-free">📥 Ver y descargar gratis</a>`
+    : `<a href="producto.html?id=${p.id}" class="btn-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Ver material
+       </a>`;
+  return `<article class="product-card" onclick="window.location.href='producto.html?id=${p.id}'">
+    <div class="card-badges">${badgesHtml}</div>
+    <button class="card-wish" onclick="event.stopPropagation();showToast('❤️ Guardado en favoritos')">♡</button>
+    <div class="card-img">
+      <img src="${p.imagen}" alt="${p.nombre}" loading="lazy"
+        onerror="this.parentElement.style.background='linear-gradient(135deg,#e0eaff,#c7d7fe)';this.remove()">
+      <div class="card-img-overlay"></div>
+      <div class="card-pdf-tag">📄 PDF imprimible</div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">${p.nombre}</h3>
+      <div class="card-rating">
+        <div class="stars">${stars(p.rating)}</div>
+        <span class="rating-val">${p.rating}</span>
+        <span class="rating-ct">(${p.reviews.toLocaleString()})</span>
+      </div>
+      <div class="card-chips">
+        <span class="card-chip">${p.materia}</span>
+        <span class="card-chip">${p.grado}</span>
+        <span class="card-chip">${p.paginas} págs.</span>
+      </div>
+      <div class="price-block">
+        ${priceHtml}
+        <div class="price-dl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Descarga inmediata
+        </div>
+      </div>
+    </div>
+    <div class="card-cta" onclick="event.stopPropagation()">${ctaHtml}</div>
+  </article>`;
+}
+
+/* ── STATE ── */
 let activeFilter = 'all';
 let activeSearch = '';
 
-/* ===== RENDER ===== */
-function renderGrid() {
+/* ── RENDER ── */
+function render() {
   let list = productos;
-
-  if (activeFilter === 'gratis') {
-    list = list.filter(p => p.precio === 0);
-  } else if (activeFilter !== 'all') {
-    list = list.filter(p => p.materia === activeFilter);
-  }
-
+  if (activeFilter === 'gratis') list = list.filter(p => p.precio === 0);
+  else if (activeFilter !== 'all') list = list.filter(p => p.materia === activeFilter);
   if (activeSearch) {
     const q = activeSearch.toLowerCase();
     list = list.filter(p =>
       p.nombre.toLowerCase().includes(q) ||
       p.materia.toLowerCase().includes(q) ||
-      p.grado.toLowerCase().includes(q) ||
-      p.descripcion.toLowerCase().includes(q)
+      p.grado.toLowerCase().includes(q)
     );
   }
-
+  document.getElementById('resultsCount').textContent = list.length;
   const grid = document.getElementById('productGrid');
-  const countEl = document.getElementById('resultsCount');
-  countEl.textContent = list.length;
-
   if (!list.length) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon"><img src="https://cdn-icons-png.flaticon.com/128/15432/15432792.png" style="width:60%;"></div>
-        <div class="empty-title">Sin resultados</div>
-        <div class="empty-sub">Probá con otro filtro o búsqueda diferente</div>
-      </div>`;
+    grid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">Sin resultados</div><div class="empty-sub">Probá con otro filtro o búsqueda diferente</div></div>';
     return;
   }
-
-  grid.innerHTML = list.map(createCard).join('');
+  grid.innerHTML = list.map(buildCard).join('');
 }
 
-/* ===== SET FILTER ===== */
-function setFilter(filter) {
-  activeFilter = filter;
-
-  // Sync pills
-  document.querySelectorAll('.filter-pill').forEach(b => {
-    b.classList.toggle('active', b.dataset.filter === filter);
-  });
-  // Sync cat bar tabs
-  document.querySelectorAll('.cat-tab').forEach(b => {
-    b.classList.toggle('active', b.dataset.filter === filter);
-  });
-
-  renderGrid();
+/* ── SET FILTER ── */
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-pill').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+  render();
 }
 
-/* ===== SEARCH ===== */
+/* ── SEARCH ── */
 function triggerSearch() {
   activeSearch = document.getElementById('searchInput').value.trim();
-  renderGrid();
-  smoothScrollTo('catalogo');
+  render();
+  smoothTo('catalogo');
 }
 
-function smoothScrollTo(id) {
+/* ── SMOOTH SCROLL ── */
+function smoothTo(id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-/* ===== TOAST ===== */
+/* ── TOAST ── */
 let toastTimer;
 function showToast(msg) {
   const el = document.getElementById('toast');
   el.textContent = msg;
   el.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
 }
 
-/* ===== SCROLL REVEAL ===== */
+/* ── NEWSLETTER ── */
+function sendNewsletter() {
+  const val = document.getElementById('nlEmail').value.trim();
+  if (!val) { showToast('⚠️ Ingresá un email válido'); return; }
+  document.getElementById('nlEmail').value = '';
+  showToast('✅ ¡Gracias! Te enviaremos recursos gratis pronto.');
+}
+
+/* ── SCROLL REVEAL ── */
 function setupReveal() {
-  const obs = new IntersectionObserver((entries) => {
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
@@ -2527,94 +1160,41 @@ function setupReveal() {
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
-/* ===== EVENTS ===== */
-document.addEventListener('DOMContentLoaded', function () {
-  renderGrid();
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded', () => {
+  render();
   setupReveal();
 
-  // Pills
-  document.getElementById('filterPills').addEventListener('click', function(e) {
+  /* filter pills */
+  document.getElementById('filterPills').addEventListener('click', e => {
     const btn = e.target.closest('.filter-pill');
     if (!btn) return;
     setFilter(btn.dataset.filter);
-    smoothScrollTo('catalogo');
+    smoothTo('catalogo');
   });
 
-  // Cat bar tabs
-  document.getElementById('catBar').addEventListener('click', function(e) {
+  /* cat bar */
+  document.getElementById('catBar').addEventListener('click', e => {
     const btn = e.target.closest('.cat-tab');
     if (!btn) return;
     setFilter(btn.dataset.filter);
-    smoothScrollTo('catalogo');
+    smoothTo('catalogo');
   });
 
-  // Search debounce
+  /* search debounce */
   let st;
   document.getElementById('searchInput').addEventListener('input', function () {
     clearTimeout(st);
-    st = setTimeout(() => {
-      activeSearch = this.value.trim();
-      renderGrid();
-    }, 200);
+    st = setTimeout(() => { activeSearch = this.value.trim(); render(); }, 200);
   });
-  document.getElementById('searchInput').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { triggerSearch(); }
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') triggerSearch();
   });
 
-  // URL param
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('filter')) setFilter(params.get('filter'));
+  /* URL param */
+  const p = new URLSearchParams(window.location.search);
+  if (p.get('filter')) setFilter(p.get('filter'));
 });
 </script>
-
-<script>
-    // Seleccionamos el botón y el input por sus clases
-const btn = document.querySelector('.newsletter-btn');
-const inputEmail = document.querySelector('.newsletter-input');
-
-btn.addEventListener('click', function(event) {
-  event.preventDefault(); // Evita recargas si alguna vez lo metés en un form
-  
-  // Validamos que no esté vacío
-  if (!inputEmail.value) {
-    alert('Por favor, ingresá un correo válido.');
-    return;
-  }
-
-  // Cambiamos el texto del botón mientras carga
-  const originalText = btn.textContent;
-  btn.textContent = 'Enviando...';
-
-  const serviceID = 'service_educ';
-  const templateID = 'template_educ';
-
-  // Armamos los datos a enviar. 
-  // OJO: En tu plantilla de EmailJS, la variable que recibe el correo tiene que llamarse {{email}}
-  const templateParams = {
-    email: inputEmail.value
-  };
-
-  // Usamos send() en vez de sendForm() porque no tenés etiqueta <form>
-  emailjs.send(serviceID, templateID, templateParams)
-    .then(() => {
-      // Restauramos el botón y limpiamos el input
-      btn.textContent = originalText;
-      inputEmail.value = '';
-      
-      // Acá llamamos a tu función showToast ya que el envío fue exitoso
-      if (typeof showToast === "function") {
-        showToast('');
-      } else {
-        alert('✅ ¡Gracias! Te enviaremos recursos gratis pronto.');
-      }
-    }, (err) => {
-      // Si falla, avisamos
-      btn.textContent = originalText;
-      alert('Error al enviar: ' + JSON.stringify(err));
-    });
-});
-</script>
-
-
-
-</body></html>
+</body>
+</html>
